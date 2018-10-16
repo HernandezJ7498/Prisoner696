@@ -14,6 +14,10 @@ public class PickUpSniper : MonoBehaviour {
 		
 	}
     void OnTriggerStay(){
-        Debug.Log("YOOOOOO");
+		if (Input.GetKeyDown("x")) {
+			GunManager.instance.DisableGuns ();
+			int thegun = (int)GunManager.Weapons.Sniper;
+			GunManager.instance.EnableGun (thegun);
+		}
     }
 }

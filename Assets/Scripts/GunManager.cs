@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GunManager : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class GunManager : MonoBehaviour {
         else if (instance != null)
             Destroy (gameObject);
     }
+	public enum Weapons {M9, Shotgun, M16, ColtPython, Sniper};
 	void Start () {
 		
 	}
@@ -20,5 +22,13 @@ public class GunManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+	public void DisableGuns(){
+		for (int i = 0; i < Guns.Length; i++) {
+			Guns[i].SetActive(false);
+		}
+	}
+	public void EnableGun(int TheWeapon){
+		Guns[TheWeapon].SetActive(true);
 	}
 }

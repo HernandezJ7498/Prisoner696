@@ -6,7 +6,7 @@ public class position : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        GunManager.instance.Guns[1].SetActive(true);
+        //GunManager.instance.Guns[1].SetActive(true);
 	}
 	
 	// Update is called once per frame
