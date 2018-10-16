@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
 	void Update () {
        // Debug.Log(activeSwitches);
         if(activeSwitches == 3){
-            Destroy(GameObject.Find("thecube"));
+            Destroy(GameObject.Find("TEMPSECRETDOOR"));
         }
 
 	}

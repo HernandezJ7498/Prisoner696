@@ -4,7 +4,7 @@ DONE	- 3 Meaningfull hiddlen rooms
 	DONE	- Sniper room
 	- Adaptive Enemies
 	- 5 Enemy Types
-	- 5 Weapons -
+DONE	- 5 Weapons -
 	- 10 Room puzzles	
 		List of Room puzzles:
 				2ND FLOOR
@@ -28,6 +28,7 @@ Plot Holes:
 To do:
 - Add colliders to weapons
 - Add pickup and frop to weapons
+- Switch the switches from ontrigger enter to on trigger stay and take user input
 
 Story FLow
 -
