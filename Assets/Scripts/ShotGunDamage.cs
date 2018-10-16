@@ -16,9 +16,7 @@ public class ShotGunDamage : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
 			RaycastHit shot;
-			Debug.Log ("First");
 			if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out shot)) {
-				Debug.Log ("Second");
 				TargetDistance = shot.distance;
 				Debug.Log (shot.distance);
 				if (TargetDistance < AllowedRange) {
@@ -26,7 +24,6 @@ public class ShotGunDamage : MonoBehaviour {
 
 				}
 			}
-			Debug.Log ("Third");
 		}
 	}
 }

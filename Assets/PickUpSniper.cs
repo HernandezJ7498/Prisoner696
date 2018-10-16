@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class position : MonoBehaviour {
+public class PickUpSniper : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        GunManager.instance.Guns[1].SetActive(true);
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.Log(transform.position);
+		
 	}
+    void OnTriggerStay(){
+        Debug.Log("YOOOOOO");
+    }
 }

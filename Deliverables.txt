@@ -4,7 +4,7 @@ DONE	- 3 Meaningfull hiddlen rooms
 	DONE	- Sniper room
 	- Adaptive Enemies
 	- 5 Enemy Types
-	- 5 Weapons
+	- 5 Weapons -
 	- 10 Room puzzles	
 		List of Room puzzles:
 				2ND FLOOR
@@ -14,7 +14,7 @@ DONE	- 3 Meaningfull hiddlen rooms
 				- Open all cells
 				- Unlock weapons lockers #1 HOW??? -----------
 				- Unlock weapons lockers #2 HOW??? -----------
-				- Open sniper room
+				- Open sniper room (From Back room)
 				1ST FLOOR
 				- Disable final locks master lock
 				- Find Keys to open final path
@@ -27,3 +27,7 @@ Plot Holes:
 
 To do:
 - Add colliders to weapons
+- Add pickup and frop to weapons
+
+Story FLow
+-
