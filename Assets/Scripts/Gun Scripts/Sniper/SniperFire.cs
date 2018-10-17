@@ -15,6 +15,7 @@ public class SniperFire : MonoBehaviour {
 			AudioSource gunsound = gameObject.GetComponent<AudioSource> ();
 			gunsound.Play ();
 			gameObject.GetComponent<Animation> ().Play ("snipershot");
+			GlobalAmmo.LoadedAmmo -= 1;
 	}
 }
 }
