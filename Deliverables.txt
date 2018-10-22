@@ -29,6 +29,8 @@ To do:
 - Add colliders to weapons
 - Add pickup and frop to weapons
 - Switch the switches from ontrigger enter to on trigger stay and take user input
+- Change gun pickup to "E"
+- Ammo Pickup Sound -- Tutorial 8
 
 Story FLow
 -

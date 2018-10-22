@@ -18,7 +18,6 @@ public class ShotGunDamage : MonoBehaviour {
 			RaycastHit shot;
 			if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out shot)) {
 				TargetDistance = shot.distance;
-				Debug.Log (shot.distance);
 				if (TargetDistance < AllowedRange) {
 					shot.transform.SendMessage ("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
 
