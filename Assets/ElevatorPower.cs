@@ -14,7 +14,6 @@ public class ElevatorPower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (GameManager.instance.ElevatorPower);
 	}
 	void OnTriggerStay(){
 		if (GameManager.instance.ElevatorPower == false) {

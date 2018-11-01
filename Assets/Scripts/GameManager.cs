@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 	public bool[] Switches;
     public int ActiveSwitches;
 	public bool ElevatorPower = false;
+	public bool OpenSniperRoom = false;
 
     void Awake(){
         
@@ -32,7 +33,6 @@ public class GameManager : MonoBehaviour {
         if(ActiveSwitches == 3){
             Destroy(GameObject.Find("TEMPSECRETDOOR"));
         }
-
 	}
     public void collect(GameObject passedObject){
         

@@ -14,7 +14,7 @@ DONE	- 5 Weapons -
 			DONE	- Open all cells
 				- Unlock weapons lockers #1 HOW??? -----------
 				- Unlock weapons lockers #2 HOW??? -----------
-				- Open sniper room (From Back room)
+			DONE	- Open sniper room (From Back room)
 				1ST FLOOR
 				- Disable final locks master lock
 				- Find Keys to open final path
@@ -28,11 +28,12 @@ Plot Holes:
 To do:
 - Add colliders to weapons
 - Add pickup and frop to weapons
-- Switch the switches from ontrigger enter to on trigger stay and take user input
+DONE--Switch the switches from ontrigger enter to on trigger stay and take user input
 - Change gun pickup to "E"
 - Ammo Pickup Sound -- Tutorial 8
 - add locks to document 
 - add monsters to documents
+- Lock back room
 
 Story FLow
 -
