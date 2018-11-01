@@ -9,9 +9,9 @@ DONE	- 5 Weapons -
 		List of Room puzzles:
 				2ND FLOOR
 			DONE	- Find key and exit spawn 
-			DONE	- Flip 3 switches to open elecator key room
+			DONE	- Flip 3 switches to open elevator key room
 			DONE	- Use key to star elevator
-				- Open all cells
+			DONE	- Open all cells
 				- Unlock weapons lockers #1 HOW??? -----------
 				- Unlock weapons lockers #2 HOW??? -----------
 				- Open sniper room (From Back room)
@@ -31,6 +31,8 @@ To do:
 - Switch the switches from ontrigger enter to on trigger stay and take user input
 - Change gun pickup to "E"
 - Ammo Pickup Sound -- Tutorial 8
+- add locks to document 
+- add monsters to documents
 
 Story FLow
 -

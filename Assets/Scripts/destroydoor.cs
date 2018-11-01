@@ -15,7 +15,7 @@ public class destroydoor : MonoBehaviour {
 		
 	}
     void OnTriggerEnter(Collider other){
-        if(GameManager.instance.haskey)
+		if(GameManager.instance.HasSecretKey)
             GameManager.instance.collect(gameObject);
     }
 }

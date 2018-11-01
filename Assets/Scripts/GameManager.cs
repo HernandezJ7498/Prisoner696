@@ -8,9 +8,12 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	public static int thevalue = 5;
     public static GameManager instance = null;
-    public bool haskey = false;
-    public bool[] switches;
-    public int activeSwitches;
+    public bool HasSecretKey = false;
+	public bool HasElevatorKey = false;
+	public bool[] Switches;
+    public int ActiveSwitches;
+	public bool ElevatorPower = false;
+
     void Awake(){
         
         if(instance == null)
@@ -19,14 +22,14 @@ public class GameManager : MonoBehaviour {
             Destroy (gameObject);
     }
     void Start () {
-		switches = new bool[3];
-        activeSwitches = 0;
+		Switches = new bool[3];
+        ActiveSwitches = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
        // Debug.Log(activeSwitches);
-        if(activeSwitches == 3){
+        if(ActiveSwitches == 3){
             Destroy(GameObject.Find("TEMPSECRETDOOR"));
         }
 
@@ -36,8 +39,8 @@ public class GameManager : MonoBehaviour {
         Destroy(passedObject);
     }
     public void switchon(int whichswitch){
-        switches[whichswitch] = true;
-        activeSwitches+= 1;
+        Switches[whichswitch] = true;
+        ActiveSwitches+= 1;
     }
 
 }

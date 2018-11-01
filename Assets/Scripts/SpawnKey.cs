@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class testscript : MonoBehaviour {
+public class SpawnKey : MonoBehaviour {
 
 	// Use this for initialization
     public int value1;
@@ -15,7 +15,7 @@ public class testscript : MonoBehaviour {
 		
 	}
     void OnTriggerEnter(Collider other){
-         GameManager.instance.haskey = true;
+         GameManager.instance.HasSecretKey = true;
         GameManager.instance.collect(gameObject);
     }
 }

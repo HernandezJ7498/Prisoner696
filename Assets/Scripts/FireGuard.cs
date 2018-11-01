@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour {
+public class FireGuard : MonoBehaviour {
 
 	// Use this for initialization
 	public int EnemyHealth = 10;
