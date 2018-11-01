@@ -27,6 +27,7 @@ public class KeyPad : MonoBehaviour {
 		onTrigger = false;
 		keypadScreen = false;
 		SwitchAlert.GetComponent<Text> ().text = "";
+        input = "";
 		if (doorOpen) {
 			Chestdoor.GetComponent<Animation>().Play("closechestdown");
 			M16.GetComponent<Animation>().Play("FloatingM16down");
