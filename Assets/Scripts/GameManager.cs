@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
     public int ActiveButtons;
 	public bool ElevatorPower = false;
 	public bool OpenSniperRoom = false;
+    public GameObject Bridge;
 
     void Awake(){
         
@@ -38,8 +39,8 @@ public class GameManager : MonoBehaviour {
             Destroy(GameObject.Find("TEMPSECRETDOOR"));
         }
         if(ActiveButtons == 3){
-            Debug.Log("Worked");
-            //Destroy(GameObject.Find("TEMPSECRETDOOR"));
+            ActivateBridge();
+            ActiveButtons = 4; 
         }
 	}
     public void collect(GameObject passedObject){
@@ -53,6 +54,10 @@ public class GameManager : MonoBehaviour {
     public void buttontrigger(int whichbutton){
         Buttons[whichbutton] = true;
         ActiveButtons+= 1;
+    }
+    public void ActivateBridge(){
+        Bridge.GetComponent<Animation>().Play("MovingFloor");
+
     }
 
 }

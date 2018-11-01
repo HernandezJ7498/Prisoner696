@@ -13,7 +13,7 @@ DONE	- 5 Weapons -
 			DONE	- Use key to star elevator
 			DONE	- Open all cells
 			DONE	- Unlock weapons Chest
-				- Unlock weapons lockers #2 HOW??? -----------
+				- Activate Lava bridge
 			DONE	- Open sniper room (From Back room)
 				1ST FLOOR
 				- Disable final locks master lock
