@@ -90,31 +90,30 @@ public class KeyPad : MonoBehaviour {
 					input += "5";
 				}
 
-				/*if(GUI.Button(new Rect(215, 140, 100, 100), "6"))
+				if(Input.GetKeyDown(KeyCode.Keypad6))
 				{
-					input = input + "6";
+					input += "6";
 				}
 
-				if(GUI.Button(new Rect(5, 245, 100, 100), "7"))
+				if(Input.GetKeyDown(KeyCode.Keypad7))
 				{
-					input = input + "7";
+					input += "7";
 				}
 
-				if(GUI.Button(new Rect(110, 245, 100, 100), "8"))
+				if(Input.GetKeyDown(KeyCode.Keypad8))
 				{
-					input = input + "8";
+					input += "8";
 				}
 
-				if(GUI.Button(new Rect(215, 245, 100, 100), "9"))
+				if(Input.GetKeyDown(KeyCode.Keypad9))
 				{
-					input = input + "9";
+					input += "9";
 				}
 
-				if(GUI.Button(new Rect(110, 350, 100, 100), "0"))
+				if(Input.GetKeyDown(KeyCode.Keypad0))
 				{
-					input = input + "0";
+					input += "0";
 				}
-			}*/
 		}
 		/*if(doorOpen)
 		{

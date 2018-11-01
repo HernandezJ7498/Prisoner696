@@ -18,9 +18,11 @@ public class Elevator : MonoBehaviour {
 	}
 	void OnTriggerEnter(){
 		if (GameManager.instance.HasElevatorKey) {
-			player.transform.position = new Vector3 (579.8f, 375f, -12.5f);
+			player.transform.position = new Vector3 (567.1f, 374.7f, -10.6f);
 		} else {
 			SwitchAlert.GetComponent<Text>().text = "Need Key to start elevator";
 		}
+	}void OnTriggerExit(){
+		SwitchAlert.GetComponent<Text>().text = "";
 	}
 }
