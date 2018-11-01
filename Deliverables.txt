@@ -3,7 +3,7 @@ DONE	- 3 Meaningfull hiddlen rooms
 	DONE	- cell drop floor
 	DONE	- Sniper room
 	- Adaptive Enemies
-	- 5 Enemy Types
+DONE	- 5 Enemy Types
 DONE	- 5 Weapons -
 	- 10 Room puzzles	
 		List of Room puzzles:
@@ -12,7 +12,7 @@ DONE	- 5 Weapons -
 			DONE	- Flip 3 switches to open elevator key room
 			DONE	- Use key to star elevator
 			DONE	- Open all cells
-				- Unlock weapons lockers #1 HOW??? -----------
+			DONE	- Unlock weapons Chest
 				- Unlock weapons lockers #2 HOW??? -----------
 			DONE	- Open sniper room (From Back room)
 				1ST FLOOR
