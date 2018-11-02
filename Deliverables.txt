@@ -16,9 +16,9 @@ DONE	- 10 Room puzzles
 			DONE	- Activate Lava bridge
 			DONE	- Open sniper room (From Back room)
 				1ST FLOOR
-			DONE	- Disable final locks master lock
-			DONE	- Build Keys to open final path
-			DONE	- Unlock final door HOW??? -------- SNIPER-----
+			DONE	- Disable final locks master locks
+			DONE	- repair Key to open final path
+			DONE	- Open control room
 
 Plot Holes:
 - Why does the player have to go to the back room?

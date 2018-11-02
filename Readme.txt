@@ -6,7 +6,7 @@ Movement:
 	D: Move Right
 	Mouse: Look Around
 	Mouse click left: shoot
-	E: Event (Picking Up, Activating)
+	E: Event (Picking Up, Activating, Picking up weapons)
 	R: Repair
 
 List of Deliverables:

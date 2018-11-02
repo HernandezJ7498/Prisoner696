@@ -40211,6 +40211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value1: 0
+  SwitchAlert: {fileID: 2078937004}
 --- !u!54 &1087859330
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -72971,6 +72972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5336c50d3187afb4db8041c8640e72e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SwitchAlert: {fileID: 2078937004}
 --- !u!136 &1858176869
 CapsuleCollider:
   m_ObjectHideFlags: 0
