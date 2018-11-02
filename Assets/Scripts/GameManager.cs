@@ -18,6 +18,14 @@ public class GameManager : MonoBehaviour {
 	public bool OpenSniperRoom = false;
 	public bool CafDoorIsOpen = false;
 	public bool PanelActive = false;
+	public int FireGuardHealth = 10;
+	public int EarthGuardHealth = 10;
+	public int SunGuardHealth = 10;
+	public int UnicornGuardHealth = 3;
+	public int DarkGuardHealth = 10;
+	public int KillCount = 0;
+	bool level1 = false;
+	bool level2 = false;
     public GameObject Bridge;
 
     void Awake(){
@@ -32,6 +40,11 @@ public class GameManager : MonoBehaviour {
         ActiveSwitches = 0;
         Buttons = new bool[3];
         ActiveButtons = 0;
+		FireGuardHealth = 10;
+		EarthGuardHealth = 10;
+		SunGuardHealth = 10;
+		UnicornGuardHealth = 3;
+		DarkGuardHealth = 10;
 	}
 	
 	// Update is called once per frame
@@ -47,6 +60,14 @@ public class GameManager : MonoBehaviour {
             ActivateBridge();
             ActiveButtons = 4; 
         }
+		if(KillCount > 3 && !level1){
+			UnicornGuardHealth = 6;
+			level1 = true;
+		}
+		if(KillCount > 10 && !level2){
+			UnicornGuardHealth = 9;
+			level2 = true;
+		}
 	}
     public void collect(GameObject passedObject){
         

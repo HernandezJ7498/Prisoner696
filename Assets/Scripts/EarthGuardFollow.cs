@@ -25,7 +25,7 @@ public class EarthGuardFollow : MonoBehaviour {
 		Hurt01 = GameObject.Find("Hurt01").GetComponent<AudioSource>();
 		Hurt02 = GameObject.Find("Hurt02").GetComponent<AudioSource>();
 		Hurt03 = GameObject.Find("Hurt02").GetComponent<AudioSource>();
-		allowedRange = 30;
+		allowedRange = 25;
 		//public Animator anim;	
 	}
 

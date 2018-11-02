@@ -23,6 +23,7 @@ public class SunGuardFollow : MonoBehaviour {
 	int R1;
 	int R2;
 	int R3;
+	int howclose = 2;
 	public int PainSound;
 	void Start () {
 		TheEnemy = GameObject.FindWithTag ("SunGuard");
@@ -35,7 +36,7 @@ public class SunGuardFollow : MonoBehaviour {
 		Light1 = GameObject.Find("Light1").GetComponent<Light>();
 		Light2 = GameObject.Find("Light2").GetComponent<Light>();
 		Light3 = GameObject.Find("Light3").GetComponent<Light>();
-		allowedRange = 50;
+		allowedRange = 20;
 		//public Animator anim;	
 	}
 
@@ -46,8 +47,8 @@ public class SunGuardFollow : MonoBehaviour {
 		if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out shot)){
 			TargetDistance = shot.distance;
 			if(TargetDistance < allowedRange){
+				AttackTrigger = 1;
 				EnemySpeed = 0.03f;
-				if(AttackTrigger == 0){
 					//TheEnemy.GetComponent<Animator> ().SetTrigger ("iSeePlayer");
 					transform.position = Vector3.MoveTowards (transform.position, ThePlayer.transform.position, EnemySpeed);
 					R1 = Random.Range (0,30);
@@ -62,14 +63,14 @@ public class SunGuardFollow : MonoBehaviour {
 					if(R3 == 2){
 						Light3.enabled = !Light3.enabled;
 					}
-				}
 			}
 			else{
 				EnemySpeed = 0;
 				TheEnemy.GetComponent<Animator> ().SetTrigger ("iDontSeePlayer");
+				AttackTrigger = 0;
 			}
 		}
-		if (AttackTrigger == 1) {
+		if (AttackTrigger == 1 && TargetDistance < howclose) {
 			//Debug.Log (IsAttacking);
 			if (IsAttacking == 0) {
 				StartCoroutine (EnemyDamage ());
@@ -81,7 +82,7 @@ public class SunGuardFollow : MonoBehaviour {
 	}
 	void OnTriggerStay(){
 		//Debug.Log ("Here");
-		AttackTrigger = 1;
+		//AttackTrigger = 1;
 	}
 	void OnTriggerExit(){
 		AttackTrigger = 0;

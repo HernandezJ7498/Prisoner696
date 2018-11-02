@@ -5,7 +5,7 @@ using UnityEngine;
 public class M16Damage : MonoBehaviour {
 
 	// Use this for initialization
-	public int DamageAmount = 5;
+	public int DamageAmount = 1;
 	public float TargetDistance;
 	public float AllowedRange = 15;
 	void Start () {

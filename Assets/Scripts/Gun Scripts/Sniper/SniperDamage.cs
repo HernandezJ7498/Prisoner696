@@ -5,11 +5,11 @@ using UnityEngine;
 public class SniperDamage : MonoBehaviour {
 
 	// Use this for initialization
-	public int DamageAmount = 5;
+	public int DamageAmount;
 	public float TargetDistance;
 	public float AllowedRange = 15;
 	void Start () {
-
+		DamageAmount = 1;
 	}
 
 	// Update is called once per frame

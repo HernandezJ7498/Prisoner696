@@ -2,7 +2,7 @@ DONE	- 3 Meaningfull hiddlen rooms
 	DONE	- Elevator key room
 	DONE	- cell drop floor
 	DONE	- Sniper room
-	- Adaptive Enemies
+DONE	- Adaptive Enemies
 DONE	- 5 Enemy AI Patterns
 DONE	- 5 Weapons -
 	- 10 Room puzzles	
