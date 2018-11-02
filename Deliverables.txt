@@ -3,7 +3,7 @@ DONE	- 3 Meaningfull hiddlen rooms
 	DONE	- cell drop floor
 	DONE	- Sniper room
 	- Adaptive Enemies
-DONE	- 5 Enemy Types
+DONE	- 5 Enemy AI Patterns
 DONE	- 5 Weapons -
 	- 10 Room puzzles	
 		List of Room puzzles:
@@ -13,7 +13,7 @@ DONE	- 5 Weapons -
 			DONE	- Use key to star elevator
 			DONE	- Open all cells
 			DONE	- Unlock weapons Chest
-				- Activate Lava bridge
+			DONE	- Activate Lava bridge
 			DONE	- Open sniper room (From Back room)
 				1ST FLOOR
 				- Disable final locks master lock

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
     public int ActiveButtons;
 	public bool ElevatorPower = false;
 	public bool OpenSniperRoom = false;
+	public bool CafDoorIsOpen = false;
+	public bool PanelActive = false;
     public GameObject Bridge;
 
     void Awake(){
@@ -38,6 +40,9 @@ public class GameManager : MonoBehaviour {
         if(ActiveSwitches == 3){
             Destroy(GameObject.Find("TEMPSECRETDOOR"));
         }
+		if(CafDoorIsOpen){
+			Destroy(GameObject.Find("TEMPCAFDOOR"));
+		}
         if(ActiveButtons == 3){
             ActivateBridge();
             ActiveButtons = 4; 

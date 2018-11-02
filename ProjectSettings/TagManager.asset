@@ -6,6 +6,14 @@ TagManager:
   tags:
   - SF_Door
   - SF_Door2
+  - RedMonster
+  - SunGuard
+  - EarthGuard
+  - DarkGuard
+  - UnicornGuard
+  - L1
+  - L2
+  - L3
   layers:
   - Default
   - TransparentFX
