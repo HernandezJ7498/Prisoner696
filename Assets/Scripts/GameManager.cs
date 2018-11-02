@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour {
 	public int KillCount = 0;
 	bool level1 = false;
 	bool level2 = false;
+    public int KeyParts;
+    public bool HasAllKeys = false;
+    public int Locks = 2;
     public GameObject Bridge;
 
     void Awake(){
@@ -45,6 +48,7 @@ public class GameManager : MonoBehaviour {
 		SunGuardHealth = 10;
 		UnicornGuardHealth = 3;
 		DarkGuardHealth = 10;
+        KeyParts = 0;
 	}
 	
 	// Update is called once per frame
@@ -68,6 +72,11 @@ public class GameManager : MonoBehaviour {
 			UnicornGuardHealth = 9;
 			level2 = true;
 		}
+        if(Locks == 0){
+            Destroy(GameObject.Find("TEMPBACKDOOR"));
+        }
+       // Debug.Log(KeyParts);
+        //Debug.Log(HasAllKeys);
 	}
     public void collect(GameObject passedObject){
         

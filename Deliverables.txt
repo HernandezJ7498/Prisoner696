@@ -5,7 +5,7 @@ DONE	- 3 Meaningfull hiddlen rooms
 DONE	- Adaptive Enemies
 DONE	- 5 Enemy AI Patterns
 DONE	- 5 Weapons -
-	- 10 Room puzzles	
+DONE	- 10 Room puzzles	
 		List of Room puzzles:
 				2ND FLOOR
 			DONE	- Find key and exit spawn 
@@ -16,9 +16,9 @@ DONE	- 5 Weapons -
 			DONE	- Activate Lava bridge
 			DONE	- Open sniper room (From Back room)
 				1ST FLOOR
-				- Disable final locks master lock
-				- Find Keys to open final path
-				- Unlock final door HOW??? -------- SNIPER-----
+			DONE	- Disable final locks master lock
+			DONE	- Build Keys to open final path
+			DONE	- Unlock final door HOW??? -------- SNIPER-----
 
 Plot Holes:
 - Why does the player have to go to the back room?

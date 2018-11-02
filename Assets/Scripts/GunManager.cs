@@ -14,7 +14,7 @@ public class GunManager : MonoBehaviour {
         else if (instance != null)
             Destroy (gameObject);
     }
-	public enum Weapons {M9, Shotgun, M16, ColtPython, Sniper};
+	public enum Weapons {M9, Shotgun, M16, ColtPython, Sniper, Crowbar};
 	void Start () {
 		
 	}
