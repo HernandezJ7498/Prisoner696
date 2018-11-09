@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour {
     public bool HasAllKeys = false;
     public int Locks = 2;
     public GameObject Bridge;
+    float timeLeft = 30.0f;
+    public GameObject tdisplay;
 
     void Awake(){
         
@@ -75,6 +77,9 @@ public class GameManager : MonoBehaviour {
         if(Locks == 0){
             Destroy(GameObject.Find("TEMPBACKDOOR"));
         }
+        timeLeft -= Time.deltaTime;
+        tdisplay.GetComponent<Text>().text = timeLeft.ToString();
+        
        // Debug.Log(KeyParts);
         //Debug.Log(HasAllKeys);
 	}
