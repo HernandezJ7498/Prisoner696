@@ -30,8 +30,11 @@ public class GameManager : MonoBehaviour {
     public bool HasAllKeys = false;
     public int Locks = 2;
     public GameObject Bridge;
-    float timeLeft = 30.0f;
+    float timeLeft = 71.0f;
     public GameObject tdisplay;
+    float minutes;
+    float seconds;
+    string seconds1;
 
     void Awake(){
         
@@ -78,8 +81,16 @@ public class GameManager : MonoBehaviour {
             Destroy(GameObject.Find("TEMPBACKDOOR"));
         }
         timeLeft -= Time.deltaTime;
-        tdisplay.GetComponent<Text>().text = timeLeft.ToString();
-        
+       // tdisplay.GetComponent<Text>().text = timeLeft.ToString();
+        minutes = Mathf.Floor(timeLeft / 60);
+        seconds = Mathf.RoundToInt(timeLeft % 60);
+        seconds1 = seconds.ToString();
+        if (seconds < 10)
+        {
+            seconds =  Mathf.RoundToInt(seconds);
+            seconds1 = "0" + seconds.ToString();
+        }
+        tdisplay.GetComponent<Text>().text = minutes.ToString() + ":" + seconds1;//GUI.Label(new Rect(10, 10, 250, 100), minutes + ":" + seconds);
        // Debug.Log(KeyParts);
         //Debug.Log(HasAllKeys);
 	}
