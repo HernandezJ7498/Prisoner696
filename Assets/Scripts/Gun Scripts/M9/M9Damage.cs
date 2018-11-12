@@ -14,14 +14,16 @@ public class M9Damage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown (0)) {
-			RaycastHit shot;
-			if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out shot)) {
-				TargetDistance = shot.distance;
-				//Debug.Log (shot.distance);
-				if (TargetDistance < AllowedRange) {
-					shot.transform.SendMessage ("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
+		if (GlobalAmmo.LoadedAmmo >= 1) {
+			if (Input.GetMouseButtonDown (0)) {
+				RaycastHit shot;
+				if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out shot)) {
+					TargetDistance = shot.distance;
+					//Debug.Log (shot.distance);
+					if (TargetDistance < AllowedRange) {
+						shot.transform.SendMessage ("DeductPoints", DamageAmount, SendMessageOptions.DontRequireReceiver);
 
+					}
 				}
 			}
 		}

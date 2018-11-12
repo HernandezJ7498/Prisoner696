@@ -15,12 +15,14 @@ public class CrossAnimate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown (0)) {
-			UpCursor.GetComponent<Animator> ().enabled = true;
-			DownCursor.GetComponent<Animator> ().enabled = true;
-			LeftCursor.GetComponent<Animator> ().enabled = true;
-			RightCursor.GetComponent<Animator> ().enabled = true;
-			StartCoroutine (WaitingAnim());
+		if (GlobalAmmo.LoadedAmmo >= 1) {
+			if (Input.GetMouseButtonDown (0)) {
+				UpCursor.GetComponent<Animator> ().enabled = true;
+				DownCursor.GetComponent<Animator> ().enabled = true;
+				LeftCursor.GetComponent<Animator> ().enabled = true;
+				RightCursor.GetComponent<Animator> ().enabled = true;
+				StartCoroutine (WaitingAnim ());
+			}
 		}
 	}
 	IEnumerator WaitingAnim(){
