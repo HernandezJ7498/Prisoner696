@@ -9,22 +9,28 @@ public class Button : MonoBehaviour {
 	public int ButtonNumber;
 	public GameObject SwitchAlert;
 	public bool Triggered;
+	bool TurnTimerOn;
     void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (TurnTimerOn) {
+			GameManager.instance.IsTimerOn = true;
+			TurnTimerOn = false;
+		}
 		//Debug.Log(GameManager.instance.switches[switchNumber]);
 	}
     void OnTriggerStay(){
 		if (!Triggered) {
 			SwitchAlert.GetComponent<Text> ().text = "Press X to activate button";
 		}
-		if (Input.GetKeyDown ("x") && !Triggered) {
+		if (Input.GetKeyDown ("x")) {
 			GameManager.instance.buttontrigger (ButtonNumber);
 			StartCoroutine (ButtonCount (3));
 			Triggered = true;
+			TurnTimerOn = true;
 		}
     }
 	void OnTriggerEnter(){
@@ -41,7 +47,11 @@ public class Button : MonoBehaviour {
 	IEnumerator ButtonCount (float delay) {
 		Triggered = true;
 		int Buttoncount = GameManager.instance.ActiveButtons;
-		SwitchAlert.GetComponent<Text> ().text = "Number of buttons triggered: " +Buttoncount + "/3";
+		if (GameManager.instance.ActiveButtons <= 3) {
+			SwitchAlert.GetComponent<Text> ().text = "Number of buttons triggered: " + Buttoncount + "/3";
+		} else {
+			SwitchAlert.GetComponent<Text> ().text = "Bridge is active";
+		}
 		yield return new WaitForSeconds (delay);
 		SwitchAlert.GetComponent<Text> ().text ="";
 	}
