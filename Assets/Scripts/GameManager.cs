@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject LampCam;
 
 
+
     void Awake(){
         
         if(instance == null)
@@ -69,6 +70,8 @@ public class GameManager : MonoBehaviour {
 		DarkGuardHealth = 10;
         KeyParts = 0;
 		LampCam.SetActive (false);
+        //Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 	}
 	void Update () {
         if(ActiveSwitches == 3){
@@ -111,6 +114,14 @@ public class GameManager : MonoBehaviour {
 				BridgeReset ();
 			}
 		}
+        if (Input.GetKeyUp(KeyCode.O))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            //Debug.Log("Worked");
+            //Cursor.lockState = Cursor.lockState;
+        }
 	}
 	void BridgeReset(){
 		IsTimerOn = false;

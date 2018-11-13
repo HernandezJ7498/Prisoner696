@@ -8,7 +8,10 @@ public class targetController : MonoBehaviour {
     Camera cam; //Main Camera
     enemyInView target; //Current Focused Enemy In List
     Image image;//Image Of Crosshair
- 
+    public GameObject CrossUp;
+    public GameObject CrossDown;
+    public GameObject CrossLeft;
+    public GameObject CrossRight;
     bool lockedOn;//Keeps Track Of Lock On Status    
  
     //Tracks Which Enemy In List Is Current Target
@@ -47,6 +50,10 @@ public class targetController : MonoBehaviour {
             image.enabled = false;
             lockedEnemy = 0;
             target = null;
+            CrossUp.SetActive(true);
+            CrossDown.SetActive(true);
+            CrossLeft.SetActive(true);
+            CrossRight.SetActive(true);
         }
  
         //Press X To Switch Targets
@@ -68,6 +75,10 @@ public class targetController : MonoBehaviour {
  
         if (lockedOn)
         {
+            CrossUp.SetActive(false);
+            CrossDown.SetActive(false);
+            CrossLeft.SetActive(false);
+            CrossRight.SetActive(false);
             target = nearByEnemies[lockedEnemy];
  
             //Determine Crosshair Location Based On The Current Target
