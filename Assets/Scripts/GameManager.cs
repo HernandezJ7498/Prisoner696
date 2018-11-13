@@ -32,13 +32,14 @@ public class GameManager : MonoBehaviour {
     public bool HasAllKeys = false;
     public int Locks = 2;
     public GameObject Bridge;
-    float timeLeft = 16.0f;
+    float timeLeft = 19.0f;
     public GameObject tdisplay;
     float minutes;
     float seconds;
     string seconds1;
 	public bool IsTimerOn = false;
 	bool BridgeIsActive = false;
+	public GameObject LampCam;
 
 
     void Awake(){
@@ -67,11 +68,9 @@ public class GameManager : MonoBehaviour {
 		UnicornGuardHealth = 3;
 		DarkGuardHealth = 10;
         KeyParts = 0;
+		LampCam.SetActive (false);
 	}
-	
-	// Update is called once per frame
 	void Update () {
-       // Debug.Log(activeSwitches);
         if(ActiveSwitches == 3){
             Destroy(GameObject.Find("TEMPSECRETDOOR"));
         }
@@ -83,6 +82,8 @@ public class GameManager : MonoBehaviour {
             ActiveButtons = 4; 
 			BridgeIsActive = true;
 			tdisplay.GetComponent<Text> ().text = "";
+			LampCam.GetComponent<Animation> ().Play ("ShowBridge");
+			StartCoroutine (DisableBridgeCamera());
         }
 		if(KillCount > 3 && !level1){
 			UnicornGuardHealth = 6;
@@ -97,7 +98,6 @@ public class GameManager : MonoBehaviour {
         }
 		if(IsTimerOn && !BridgeIsActive){
 			timeLeft -= Time.deltaTime;
-	       // tdisplay.GetComponent<Text>().text = timeLeft.ToString();
 	        minutes = Mathf.Floor(timeLeft / 60);
 	        seconds = Mathf.RoundToInt(timeLeft % 60);
 	        seconds1 = seconds.ToString();
@@ -106,23 +106,25 @@ public class GameManager : MonoBehaviour {
 	            seconds =  Mathf.RoundToInt(seconds);
 	            seconds1 = "0" + seconds.ToString();
 	        }
-	        tdisplay.GetComponent<Text>().text = minutes.ToString() + ":" + seconds1;//GUI.Label(new Rect(10, 10, 250, 100), minutes + ":" + seconds);
+	        tdisplay.GetComponent<Text>().text ="Time Left: " + minutes.ToString() + ":" + seconds1;//GUI.Label(new Rect(10, 10, 250, 100), minutes + ":" + seconds);
 			if(minutes == 0 && seconds == 0){
 				BridgeReset ();
 			}
 		}
-
-			// Debug.Log(KeyParts);
-        //Debug.Log(HasAllKeys);
 	}
 	void BridgeReset(){
 		IsTimerOn = false;
-		timeLeft = 16.0f;
+		timeLeft = 19.0f;
 		for (int i = 0; i < Buttons.Length; i++) {
 			Buttons [i] = false;
 		}
 		ActiveButtons = 0;
 		tdisplay.GetComponent<Text> ().text = "";
+		Lamps [0].GetComponent<Light> ().color = Color.white;
+		Lamps[1].GetComponent<Light>().color = Color.white;
+		Lamps[2].GetComponent<Light>().color = Color.white;
+		LampCam.SetActive (false);
+
 	}
     public void collect(GameObject passedObject){
         
@@ -134,14 +136,37 @@ public class GameManager : MonoBehaviour {
     }
     public void buttontrigger(int whichbutton){
 		if (Buttons [whichbutton] != true) {
+			IsTimerOn = true;
 			Lamps[whichbutton].GetComponent<Light>().color = LampColor[whichbutton];
 			Buttons [whichbutton] = true;
 			ActiveButtons += 1;
+			LampCam.SetActive (true);
+			if (whichbutton == 0) {
+				if (!Buttons [2]) {
+					BridgeReset ();
+					IsTimerOn = false;
+					tdisplay.GetComponent<Text> ().text = "";
+					LampCam.SetActive (false);
+					IsTimerOn = false;
+				}
+			}else if (whichbutton == 1) {
+				if (!Buttons [0] || !Buttons[2]) {
+					BridgeReset ();
+					IsTimerOn = false;
+					tdisplay.GetComponent<Text> ().text = "";
+					LampCam.SetActive (false);
+					IsTimerOn = false;
+				}
+			}
 		}
     }
     public void ActivateBridge(){
         Bridge.GetComponent<Animation>().Play("CreateBridge");
 
     }
+	IEnumerator DisableBridgeCamera(){
+		yield return new WaitForSeconds (8.5f);
+		LampCam.SetActive (false);
+	}
 
 }

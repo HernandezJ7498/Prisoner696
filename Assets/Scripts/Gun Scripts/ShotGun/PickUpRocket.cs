@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpShotgun : MonoBehaviour {
+public class PickUpRocket : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +16,7 @@ public class PickUpShotgun : MonoBehaviour {
     void OnTriggerStay(){
 		if (Input.GetKeyDown("x")) {
 			GunManager.instance.DisableGuns ();
-			int thegun = (int)GunManager.Weapons.Shotgun;
+			int thegun = (int)GunManager.Weapons.Rocket;
 			GunManager.instance.EnableGun (thegun);
 		}
     }

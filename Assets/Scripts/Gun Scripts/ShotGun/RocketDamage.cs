@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotGunDamage : MonoBehaviour {
+public class RocketDamage : MonoBehaviour {
 
 	// Use this for initialization
 	public int DamageAmount = 10;

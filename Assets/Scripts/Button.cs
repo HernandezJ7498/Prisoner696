@@ -9,28 +9,19 @@ public class Button : MonoBehaviour {
 	public int ButtonNumber;
 	public GameObject SwitchAlert;
 	public bool Triggered;
-	bool TurnTimerOn;
     void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (TurnTimerOn) {
-			GameManager.instance.IsTimerOn = true;
-			TurnTimerOn = false;
-		}
-		//Debug.Log(GameManager.instance.switches[switchNumber]);
+
 	}
     void OnTriggerStay(){
-		if (!Triggered) {
-			SwitchAlert.GetComponent<Text> ().text = "Press X to activate button";
-		}
 		if (Input.GetKeyDown ("x")) {
 			GameManager.instance.buttontrigger (ButtonNumber);
 			StartCoroutine (ButtonCount (3));
 			Triggered = true;
-			TurnTimerOn = true;
 		}
     }
 	void OnTriggerEnter(){
