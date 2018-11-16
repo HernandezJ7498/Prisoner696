@@ -14,9 +14,9 @@ public class destroydoor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		//SwitchAlert.GetComponent<Text>().text = "";
 	}
-    void OnTriggerEnter(Collider other){
+    void OnTriggerEnter(){
 		if(GameManager.instance.HasSecretKey){
             GameManager.instance.collect(gameObject);
         }

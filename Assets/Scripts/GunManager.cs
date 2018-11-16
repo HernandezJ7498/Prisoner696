@@ -31,4 +31,7 @@ public class GunManager : MonoBehaviour {
 	public void EnableGun(int TheWeapon){
 		Guns[TheWeapon].SetActive(true);
 	}
+	public bool isEnabled(int TheWeapon){
+		return Guns [TheWeapon].activeSelf;
+	}
 }

@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour {
 	public bool IsTimerOn = false;
 	bool BridgeIsActive = false;
 	public GameObject LampCam;
+	public bool GlassesOn = false;
+	public bool FoundGlasses = true;
+	public GameObject Glasses;
+	public GameObject GlassesDarkness;
 
 
 
@@ -70,7 +74,11 @@ public class GameManager : MonoBehaviour {
 		DarkGuardHealth = 10;
         KeyParts = 0;
 		LampCam.SetActive (false);
-        //Cursor.visible = false;
+        Cursor.visible = true;
+		Glasses.SetActive (false);
+		GlassesDarkness.SetActive (false);
+		//Cursor.lockState = CursorLockMode.None;
+		//Cursor.lockState = CursorLockMode.Confined;
         Cursor.lockState = CursorLockMode.Locked;
 	}
 	void Update () {
@@ -114,14 +122,18 @@ public class GameManager : MonoBehaviour {
 				BridgeReset ();
 			}
 		}
-        if (Input.GetKeyUp(KeyCode.O))
+        if (!GlassesOn && Input.GetKeyUp(KeyCode.G) && FoundGlasses)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = true;
-            //Debug.Log("Worked");
-            //Cursor.lockState = Cursor.lockState;
-        }
+			Glasses.SetActive(true);
+			Glasses.GetComponent<Animation>().Play ("glasses");
+			StartCoroutine (GlassesToggle("ON"));
+			GlassesOn = true;
+		}else if(GlassesOn && Input.GetKeyUp(KeyCode.G) && FoundGlasses){
+			Glasses.SetActive(true);
+			Glasses.GetComponent<Animation>().Play ("glassesoff");
+			StartCoroutine (GlassesToggle("OFF"));
+			GlassesOn = false;
+		}
 	}
 	void BridgeReset(){
 		IsTimerOn = false;
@@ -178,6 +190,17 @@ public class GameManager : MonoBehaviour {
 	IEnumerator DisableBridgeCamera(){
 		yield return new WaitForSeconds (8.5f);
 		LampCam.SetActive (false);
+	}
+	IEnumerator GlassesToggle(string Action){
+		if (Action == "ON") {
+			yield return new WaitForSeconds (1.0f);
+			Glasses.SetActive (false);
+			GlassesDarkness.SetActive (true);
+		} else {
+			yield return new WaitForSeconds (1.0f);
+			Glasses.SetActive (false);
+			GlassesDarkness.SetActive (false);
+		}
 	}
 
 }

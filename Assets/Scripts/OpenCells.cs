@@ -41,7 +41,11 @@ public class OpenCells : MonoBehaviour {
 		SwitchAlert.GetComponent<Text> ().text = "";
 	}
 	void OnTriggerEnter(){
-		SwitchAlert.GetComponent<Text> ().text = "Press X to open all cells";
+		if (!onetimeactive) {
+			SwitchAlert.GetComponent<Text> ().text = "Press X to open all cells";
+		} else {
+				SwitchAlert.GetComponent<Text> ().text = "Cells are open";
+		}
 	}
 	IEnumerator wait(){
 		yield return new WaitForSeconds (18);

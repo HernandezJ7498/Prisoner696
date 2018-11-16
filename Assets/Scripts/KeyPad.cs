@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 public class KeyPad : MonoBehaviour {
 
-	public string curPassword = "12345";
+	public string curPassword = "5283";
 	public string input;
 	public bool onTrigger;
 	public bool doorOpen = false;
@@ -51,7 +51,6 @@ public class KeyPad : MonoBehaviour {
 		{
 			if(onTrigger)
 			{
-				//GUI.Box(new Rect(0, 0, 200, 25), "Press 'E' to open keypad");
 				SwitchAlert.GetComponent<Text> ().text = "Pess 'E' to use numpad";
 				if(Input.GetKeyDown(KeyCode.E))
 				{
