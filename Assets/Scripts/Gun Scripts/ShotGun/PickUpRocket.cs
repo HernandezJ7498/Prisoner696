@@ -14,7 +14,7 @@ public class PickUpRocket : MonoBehaviour {
 		
 	}
     void OnTriggerStay(){
-		if (Input.GetKeyDown("x")) {
+		if (Input.GetKeyDown(KeyCode.X)) {
 			GunManager.instance.DisableGuns ();
 			int thegun = (int)GunManager.Weapons.Rocket;
 			GunManager.instance.EnableGun (thegun);

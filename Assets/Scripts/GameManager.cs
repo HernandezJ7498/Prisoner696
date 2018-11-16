@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour {
 	public bool FoundGlasses = true;
 	public GameObject Glasses;
 	public GameObject GlassesDarkness;
+    public GameObject Crosshair;
 
 
 
@@ -134,6 +135,15 @@ public class GameManager : MonoBehaviour {
 			StartCoroutine (GlassesToggle("OFF"));
 			GlassesOn = false;
 		}
+        /*if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            if(Crosshair.activeSelf){
+                Crosshair.SetActive(false);
+            }
+            else{
+                Crosshair.SetActive(true);
+            }
+        }*/
 	}
 	void BridgeReset(){
 		IsTimerOn = false;

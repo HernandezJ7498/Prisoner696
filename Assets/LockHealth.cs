@@ -11,7 +11,7 @@ public class LockHealth : MonoBehaviour
     public RaycastHit shot;
     public int AllowedRangeMin = 15;
     public int AllowedRangeMax = 16;
-	int Health = 10;
+	public int Health = 10;
     void Start()
     {
         ThePlayer = GameObject.FindWithTag("Player");
@@ -20,9 +20,11 @@ public class LockHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Health < 1) {
-			Destroy (gameObject);
-		}
+  
+            if (Health < 1)
+            {
+                Destroy(gameObject);
+            }
         //transform.LookAt(ThePlayer.transform);
         /*if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out shot))
         {
@@ -36,9 +38,13 @@ public class LockHealth : MonoBehaviour
                 this.GetComponent<enemyInView>().InRange = false;
             }
         }*/
+
 		
     }
 	void DeductPoints(int DamageAmount){
-		Health -= DamageAmount;
+        if (targetController.TargetInstance.target == gameObject)
+        {
+            Health -= DamageAmount;
+        }
 	}
 }

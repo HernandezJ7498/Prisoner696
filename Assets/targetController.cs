@@ -4,28 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;//Be Sure To Include This
  
 public class targetController : MonoBehaviour {
- 
+    public static targetController TargetInstance = null;
     Camera cam; //Main Camera
-    enemyInView target; //Current Focused Enemy In List
+    public GameObject target; //Current Focused Enemy In List
     Image image;//Image Of Crosshair
     public GameObject CrossUp;
     public GameObject CrossDown;
     public GameObject CrossLeft;
     public GameObject CrossRight;
+    public GameObject CurrentEnemy;
     public bool lockedOn;//Keeps Track Of Lock On Status    
  
     //Tracks Which Enemy In List Is Current Target
     int lockedEnemy;
  
     //List of nearby enemies
-    public static List<enemyInView> nearByEnemies = new List<enemyInView>();
- 
+    public static List<GameObject> nearByEnemies = new List<GameObject>();
+    void Awake()
+    {
+
+        if (TargetInstance == null)
+            TargetInstance = this;
+        else if (TargetInstance != null)
+            Destroy(gameObject);
+    }
     void Start () {
         cam = Camera.main;
         image = gameObject.GetComponent<Image>();
  
         lockedOn = false;
         lockedEnemy = 0;
+        image.enabled = false;
     }  
      
     void Update () { 
@@ -78,9 +87,21 @@ public class targetController : MonoBehaviour {
 	             
 				//Rotate Crosshair
 				gameObject.transform.Rotate (new Vector3 (0, 0, -1));
-			}             
+            }
+            else
+            {
+                lockedOn = false;
+                image.enabled = false;
+                lockedEnemy = 0;
+                target = null;
+                CrossUp.SetActive(true);
+                CrossDown.SetActive(true);
+                CrossLeft.SetActive(true);
+                CrossRight.SetActive(true);
+            }             
 		} else {
-			image.enabled = false;
+			//image.enabled = false;
 		}
+        //Debug.Log("here");
 	}
 }

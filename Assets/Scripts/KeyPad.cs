@@ -11,14 +11,15 @@ public class KeyPad : MonoBehaviour {
 	public Transform doorHinge;
 	public GameObject SwitchAlert;
 	public GameObject Chestdoor;
-	public GameObject M16;
+	public GameObject Rocket;
 
 	void OnTriggerEnter(Collider other)
 	{
 		onTrigger = true;
 		if (doorOpen) {
 			Chestdoor.GetComponent<Animation>().Play("openchestup");
-			M16.GetComponent<Animation>().Play("FloatingM16");
+            Rocket.GetComponent<Animation>().Play("ChestRocketFloat");
+            Rocket.GetComponent<BoxCollider>().enabled = true;
 		}
 	}
 
@@ -30,7 +31,8 @@ public class KeyPad : MonoBehaviour {
         input = "";
 		if (doorOpen) {
 			Chestdoor.GetComponent<Animation>().Play("closechestdown");
-			M16.GetComponent<Animation>().Play("FloatingM16down");
+            Rocket.GetComponent<Animation>().Play("ChestRocketFloatDown");
+            Rocket.GetComponent<BoxCollider>().enabled = false;
 		}
 	}
 
@@ -43,9 +45,10 @@ public class KeyPad : MonoBehaviour {
 		if(input == curPassword && !doorOpen)
 		{
 			Chestdoor.GetComponent<Animation>().Play("openchestup");
-			M16.GetComponent<Animation>().Play("FloatingM16");
+			Rocket.GetComponent<Animation>().Play("ChestRocketFloat");
 			doorOpen = true;
 			SwitchAlert.GetComponent<Text> ().text = "";
+            Rocket.GetComponent<BoxCollider>().enabled = true;
 		}
 		if(!doorOpen)
 		{

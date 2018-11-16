@@ -8,6 +8,7 @@ public class enemyInView : MonoBehaviour {
     bool addOnlyOnce;//This Boolean Is Used To Only Allow The Enemy To Be Added To The List Once
     public bool InRange;
 	public int myindex;
+    public GameObject Crosshair;
      
     void Start ()
     {
@@ -31,11 +32,17 @@ public class enemyInView : MonoBehaviour {
         if (onScreen && addOnlyOnce)
         {
             addOnlyOnce = false;           
-            targetController.nearByEnemies.Add(this);
-			myindex = targetController.nearByEnemies.IndexOf(this);
-        }     
+            targetController.nearByEnemies.Add(gameObject);
+			//myindex = targetController.nearByEnemies.IndexOf(this);
+        }
+       // Debug.Log(this);
     }
 	void OnDestroy(){
-		targetController.nearByEnemies.RemoveAt (myindex);
+        //Debug.Log("Done");]
+        if (Crosshair != null)
+        {
+            targetController.TargetInstance.lockedOn = false;
+            targetController.nearByEnemies.RemoveAt(targetController.nearByEnemies.IndexOf(gameObject));
+        }
 	}
 }
