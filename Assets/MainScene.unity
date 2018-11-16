@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0664f684194606543bc21f34fbcaf9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmount: 10
+  Crosshair: {fileID: 877762779}
   TargetDistance: 0
   AllowedRange: 15
 --- !u!43 &44436325
@@ -1730,7 +1730,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1414551616088980, guid: 71994a107f389504d89d65b1c18ac97b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71994a107f389504d89d65b1c18ac97b, type: 2}
@@ -39138,6 +39138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InRange: 0
+  myindex: 0
 --- !u!114 &924931647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46441,7 +46442,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1255173885}
   m_LocalRotation: {x: -0, y: -0.7933533, z: -0, w: 0.6087614}
-  m_LocalPosition: {x: 563.88, y: 384.82, z: 3.87}
+  m_LocalPosition: {x: 593.67, y: 369.96, z: -12.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 739693904}
@@ -47602,7 +47603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0664f684194606543bc21f34fbcaf9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmount: 10
+  Crosshair: {fileID: 0}
   TargetDistance: 0
   AllowedRange: 15
 --- !u!1 &1403519124
@@ -51820,6 +51821,7 @@ GameObject:
   - component: {fileID: 1690439718}
   - component: {fileID: 1690439720}
   - component: {fileID: 1690439719}
+  - component: {fileID: 1690439716}
   m_Layer: 0
   m_Name: LeftLock
   m_TagString: Untagged
@@ -51827,6 +51829,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1690439716
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690439715}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 25.546507, y: 16.253052, z: 13.757096}
+  m_Center: {x: -2.3041441, y: -0.4647827, z: 6.3785563}
 --- !u!4 &1690439717
 Transform:
   m_ObjectHideFlags: 0
@@ -51867,6 +51881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InRange: 0
+  myindex: 0
 --- !u!114 &1690439720
 MonoBehaviour:
   m_ObjectHideFlags: 0

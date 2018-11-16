@@ -7,6 +7,7 @@ public class enemyInView : MonoBehaviour {
     Camera cam;//Camera Used To Detect Enemies On Screen      
     bool addOnlyOnce;//This Boolean Is Used To Only Allow The Enemy To Be Added To The List Once
     public bool InRange;
+	public int myindex;
      
     void Start ()
     {
@@ -31,6 +32,10 @@ public class enemyInView : MonoBehaviour {
         {
             addOnlyOnce = false;           
             targetController.nearByEnemies.Add(this);
+			myindex = targetController.nearByEnemies.IndexOf(this);
         }     
-    }     
+    }
+	void OnDestroy(){
+		targetController.nearByEnemies.RemoveAt (myindex);
+	}
 }
