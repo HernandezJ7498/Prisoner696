@@ -41,10 +41,11 @@ public class GameManager : MonoBehaviour {
 	bool BridgeIsActive = false;
 	public GameObject LampCam;
 	public bool GlassesOn = false;
-	public bool FoundGlasses = true;
+	public bool FoundGlasses = false;
 	public GameObject Glasses;
 	public GameObject GlassesDarkness;
     public GameObject Crosshair;
+	public GameObject HeatWave;
 
 
 
@@ -200,6 +201,7 @@ public class GameManager : MonoBehaviour {
 	IEnumerator DisableBridgeCamera(){
 		yield return new WaitForSeconds (8.5f);
 		LampCam.SetActive (false);
+		HeatWave.SetActive (false);
 	}
 	IEnumerator GlassesToggle(string Action){
 		if (Action == "ON") {
