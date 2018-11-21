@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject GlassesDarkness;
     public GameObject Crosshair;
 	public GameObject HeatWave;
+	//public bool paused;
 
 
 

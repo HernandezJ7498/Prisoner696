@@ -1,0 +1,332 @@
+fileFormatVersion: 2
+guid: f769545a6c135ac45b7aec5463a48e86
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Innervision_Light_Industrial_Lamp_Bulb_bottomceramic_default4
+    100004: Innervision_Light_Industrial_Lamp_Bulb_bulb_default8
+    100006: Innervision_Light_Industrial_Lamp_Bulb_contact_default3
+    100008: Innervision_Light_Industrial_Lamp_Bulb_fuse_default2
+    100010: Innervision_Light_Industrial_Lamp_Bulb_fuseholder_default
+    100012: Innervision_Light_Industrial_Lamp_Bulb_insideceramic_default7
+    100014: Innervision_Light_Industrial_Lamp_Bulb_insidestem_default
+    100016: Innervision_Light_Industrial_Lamp_Bulb_screwcap_default9
+    100018: Innervision_Light_Industrial_Lamp_Bulb_stem_default
+    100020: Innervision_Light_Industrial_Lamp_Bulb_wires_default5
+    100022: Innervision_Light_Industrial_Lamp_Cable_Cable1
+    100024: Innervision_Light_Industrial_Lamp_Chain_Chain_01
+    100026: Innervision_Light_Industrial_Lamp_Chain_Chain_02
+    100028: Innervision_Light_Industrial_Lamp_Chain_Chain_03
+    100030: Innervision_Light_Industrial_Lamp_Chain_Chain_04
+    100032: Innervision_Light_Industrial_Lamp_Chain_Chain_05
+    100034: Innervision_Light_Industrial_Lamp_Chain_Chain_06
+    100036: Innervision_Light_Industrial_Lamp_Chain_Chain_07
+    100038: Innervision_Light_Industrial_Lamp_Chain_Chain_08
+    100040: Innervision_Light_Industrial_Lamp_Chain_Obj_02
+    100042: Innervision_Light_Industrial_Lamp_Chain_Obj_03
+    100044: Innervision_Light_Industrial_Lamp_Lamp
+    400000: //RootNode
+    400002: Innervision_Light_Industrial_Lamp_Bulb_bottomceramic_default4
+    400004: Innervision_Light_Industrial_Lamp_Bulb_bulb_default8
+    400006: Innervision_Light_Industrial_Lamp_Bulb_contact_default3
+    400008: Innervision_Light_Industrial_Lamp_Bulb_fuse_default2
+    400010: Innervision_Light_Industrial_Lamp_Bulb_fuseholder_default
+    400012: Innervision_Light_Industrial_Lamp_Bulb_insideceramic_default7
+    400014: Innervision_Light_Industrial_Lamp_Bulb_insidestem_default
+    400016: Innervision_Light_Industrial_Lamp_Bulb_screwcap_default9
+    400018: Innervision_Light_Industrial_Lamp_Bulb_stem_default
+    400020: Innervision_Light_Industrial_Lamp_Bulb_wires_default5
+    400022: Innervision_Light_Industrial_Lamp_Cable_Cable1
+    400024: Innervision_Light_Industrial_Lamp_Chain_Chain_01
+    400026: Innervision_Light_Industrial_Lamp_Chain_Chain_02
+    400028: Innervision_Light_Industrial_Lamp_Chain_Chain_03
+    400030: Innervision_Light_Industrial_Lamp_Chain_Chain_04
+    400032: Innervision_Light_Industrial_Lamp_Chain_Chain_05
+    400034: Innervision_Light_Industrial_Lamp_Chain_Chain_06
+    400036: Innervision_Light_Industrial_Lamp_Chain_Chain_07
+    400038: Innervision_Light_Industrial_Lamp_Chain_Chain_08
+    400040: Innervision_Light_Industrial_Lamp_Chain_Obj_02
+    400042: Innervision_Light_Industrial_Lamp_Chain_Obj_03
+    400044: Innervision_Light_Industrial_Lamp_Lamp
+    2100000: Innervision_Light_Industrial_Lamp_Bulb_bottomceramic_default4Mat
+    2100002: Innervision_Light_Industrial_Lamp_Bulb_bulb_default8Mat
+    2100004: Innervision_Light_Industrial_Lamp_Bulb_contact_default3Mat
+    2100006: Innervision_Light_Industrial_Lamp_Bulb_fuse_default2Mat
+    2100008: Innervision_Light_Industrial_Lamp_Bulb_fuseholder_defaultMat
+    2100010: Innervision_Light_Industrial_Lamp_Bulb_insideceramic_default7Mat
+    2100012: Innervision_Light_Industrial_Lamp_Bulb_insidestem_defaultMat
+    2100014: Innervision_Light_Industrial_Lamp_Bulb_screwcap_default9Mat
+    2100016: Innervision_Light_Industrial_Lamp_Bulb_stem_defaultMat
+    2100018: Innervision_Light_Industrial_Lamp_Bulb_wires_default5Mat
+    2100020: Innervision_Light_Industrial_Lamp_Cable_Cable1Mat
+    2100022: Innervision_Light_Industrial_Lamp_Chain_Chain_01Mat
+    2100024: Innervision_Light_Industrial_Lamp_Chain_Chain_02Mat
+    2100026: Innervision_Light_Industrial_Lamp_Chain_Chain_03Mat
+    2100028: Innervision_Light_Industrial_Lamp_Chain_Chain_04Mat
+    2100030: Innervision_Light_Industrial_Lamp_Chain_Chain_05Mat
+    2100032: Innervision_Light_Industrial_Lamp_Chain_Chain_06Mat
+    2100034: Innervision_Light_Industrial_Lamp_Chain_Chain_07Mat
+    2100036: Innervision_Light_Industrial_Lamp_Chain_Chain_08Mat
+    2100038: Innervision_Light_Industrial_Lamp_Chain_Obj_02Mat
+    2100040: Innervision_Light_Industrial_Lamp_Chain_Obj_03Mat
+    2100042: Innervision_Light_Industrial_Lamp_LampMat
+    2300000: Innervision_Light_Industrial_Lamp_Bulb_bottomceramic_default4
+    2300002: Innervision_Light_Industrial_Lamp_Bulb_bulb_default8
+    2300004: Innervision_Light_Industrial_Lamp_Bulb_contact_default3
+    2300006: Innervision_Light_Industrial_Lamp_Bulb_fuse_default2
+    2300008: Innervision_Light_Industrial_Lamp_Bulb_fuseholder_default
+    2300010: Innervision_Light_Industrial_Lamp_Bulb_insideceramic_default7
+    2300012: Innervision_Light_Industrial_Lamp_Bulb_insidestem_default
+    2300014: Innervision_Light_Industrial_Lamp_Bulb_screwcap_default9
+    2300016: Innervision_Light_Industrial_Lamp_Bulb_stem_default
+    2300018: Innervision_Light_Industrial_Lamp_Bulb_wires_default5
+    2300020: Innervision_Light_Industrial_Lamp_Cable_Cable1
+    2300022: Innervision_Light_Industrial_Lamp_Chain_Chain_01
+    2300024: Innervision_Light_Industrial_Lamp_Chain_Chain_02
+    2300026: Innervision_Light_Industrial_Lamp_Chain_Chain_03
+    2300028: Innervision_Light_Industrial_Lamp_Chain_Chain_04
+    2300030: Innervision_Light_Industrial_Lamp_Chain_Chain_05
+    2300032: Innervision_Light_Industrial_Lamp_Chain_Chain_06
+    2300034: Innervision_Light_Industrial_Lamp_Chain_Chain_07
+    2300036: Innervision_Light_Industrial_Lamp_Chain_Chain_08
+    2300038: Innervision_Light_Industrial_Lamp_Chain_Obj_02
+    2300040: Innervision_Light_Industrial_Lamp_Chain_Obj_03
+    2300042: Innervision_Light_Industrial_Lamp_Lamp
+    3300000: Innervision_Light_Industrial_Lamp_Bulb_bottomceramic_default4
+    3300002: Innervision_Light_Industrial_Lamp_Bulb_bulb_default8
+    3300004: Innervision_Light_Industrial_Lamp_Bulb_contact_default3
+    3300006: Innervision_Light_Industrial_Lamp_Bulb_fuse_default2
+    3300008: Innervision_Light_Industrial_Lamp_Bulb_fuseholder_default
+    3300010: Innervision_Light_Industrial_Lamp_Bulb_insideceramic_default7
+    3300012: Innervision_Light_Industrial_Lamp_Bulb_insidestem_default
+    3300014: Innervision_Light_Industrial_Lamp_Bulb_screwcap_default9
+    3300016: Innervision_Light_Industrial_Lamp_Bulb_stem_default
+    3300018: Innervision_Light_Industrial_Lamp_Bulb_wires_default5
+    3300020: Innervision_Light_Industrial_Lamp_Cable_Cable1
+    3300022: Innervision_Light_Industrial_Lamp_Chain_Chain_01
+    3300024: Innervision_Light_Industrial_Lamp_Chain_Chain_02
+    3300026: Innervision_Light_Industrial_Lamp_Chain_Chain_03
+    3300028: Innervision_Light_Industrial_Lamp_Chain_Chain_04
+    3300030: Innervision_Light_Industrial_Lamp_Chain_Chain_05
+    3300032: Innervision_Light_Industrial_Lamp_Chain_Chain_06
+    3300034: Innervision_Light_Industrial_Lamp_Chain_Chain_07
+    3300036: Innervision_Light_Industrial_Lamp_Chain_Chain_08
+    3300038: Innervision_Light_Industrial_Lamp_Chain_Obj_02
+    3300040: Innervision_Light_Industrial_Lamp_Chain_Obj_03
+    3300042: Innervision_Light_Industrial_Lamp_Lamp
+    4300000: Innervision_Light_Industrial_Lamp_Bulb_bottomceramic_default4
+    4300002: Innervision_Light_Industrial_Lamp_Bulb_bulb_default8
+    4300004: Innervision_Light_Industrial_Lamp_Bulb_contact_default3
+    4300006: Innervision_Light_Industrial_Lamp_Bulb_fuse_default2
+    4300008: Innervision_Light_Industrial_Lamp_Bulb_fuseholder_default
+    4300010: Innervision_Light_Industrial_Lamp_Bulb_insideceramic_default7
+    4300012: Innervision_Light_Industrial_Lamp_Bulb_insidestem_default
+    4300014: Innervision_Light_Industrial_Lamp_Bulb_screwcap_default9
+    4300016: Innervision_Light_Industrial_Lamp_Bulb_stem_default
+    4300018: Innervision_Light_Industrial_Lamp_Bulb_wires_default5
+    4300020: Innervision_Light_Industrial_Lamp_Cable_Cable1
+    4300022: Innervision_Light_Industrial_Lamp_Chain_Chain_01
+    4300024: Innervision_Light_Industrial_Lamp_Chain_Chain_02
+    4300026: Innervision_Light_Industrial_Lamp_Chain_Chain_03
+    4300028: Innervision_Light_Industrial_Lamp_Chain_Chain_04
+    4300030: Innervision_Light_Industrial_Lamp_Chain_Chain_05
+    4300032: Innervision_Light_Industrial_Lamp_Chain_Chain_06
+    4300034: Innervision_Light_Industrial_Lamp_Chain_Chain_07
+    4300036: Innervision_Light_Industrial_Lamp_Chain_Chain_08
+    4300038: Innervision_Light_Industrial_Lamp_Chain_Obj_02
+    4300040: Innervision_Light_Industrial_Lamp_Chain_Obj_03
+    4300042: Innervision_Light_Industrial_Lamp_Lamp
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Bulb_bottomceramic_default4Mat
+    second: {fileID: 2100000, guid: 85a04e84fc1884f439cdcd644f2651b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Bulb_bulb_default8Mat
+    second: {fileID: 2100000, guid: 141622665da120f42845de2bf789f74b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Bulb_contact_default3Mat
+    second: {fileID: 2100000, guid: 85477d69cf5f91044b3d17a2adc28cef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Bulb_fuse_default2Mat
+    second: {fileID: 2100000, guid: 809bf716b59e9a243aaf9552be9133fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Bulb_fuseholder_defaultMat
+    second: {fileID: 2100000, guid: fa2e496f8d7bfa948a5dd950c698b0cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Bulb_insideceramic_default7Mat
+    second: {fileID: 2100000, guid: e96b7f801dcbec044ace5b637a0389e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Bulb_insidestem_defaultMat
+    second: {fileID: 2100000, guid: 8e0bac90b0a8b8e4a966c04b12faa8b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Bulb_screwcap_default9Mat
+    second: {fileID: 2100000, guid: c8069d853d8558342b386eda18444b79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Bulb_stem_defaultMat
+    second: {fileID: 2100000, guid: aacc2872b9b80454badf29b23a37048d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Bulb_wires_default5Mat
+    second: {fileID: 2100000, guid: a5876c18a4b88704491e6da13bfcc73d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Cable_Cable1Mat
+    second: {fileID: 2100000, guid: a30d8166708a7b443ad63fef284ac371, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Chain_Chain_01Mat
+    second: {fileID: 2100000, guid: 00e107402e5155842a8fa9c13062afe3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Chain_Chain_02Mat
+    second: {fileID: 2100000, guid: 4841ab31681e2434f91ccc0c2f2eb794, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Chain_Chain_03Mat
+    second: {fileID: 2100000, guid: 92dc24dc71724f7418578da9cb54bc42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Chain_Chain_04Mat
+    second: {fileID: 2100000, guid: bd3c967e9cd1c3f4985bf16a85e31e13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Chain_Chain_05Mat
+    second: {fileID: 2100000, guid: 2166adaf846809649b9e993ab8936c37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Chain_Chain_06Mat
+    second: {fileID: 2100000, guid: 1397b2ed8a43d6a4abdf8f761bb184a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Chain_Chain_07Mat
+    second: {fileID: 2100000, guid: df38eec44daccb74fa1804f91170d9e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Chain_Chain_08Mat
+    second: {fileID: 2100000, guid: bf6734f564dca8b4ba67be63ea6833c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Chain_Obj_02Mat
+    second: {fileID: 2100000, guid: 294784dae8790fd41ba597c0eb8722d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_Chain_Obj_03Mat
+    second: {fileID: 2100000, guid: 5c7b9ab5b04fc4f4a81145dbda36429a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Innervision_Light_Industrial_Lamp_LampMat
+    second: {fileID: 2100000, guid: 7c342470021614f40a7bceb0b0c87a63, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

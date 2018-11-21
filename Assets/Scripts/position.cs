@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class position : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class position : MonoBehaviour {
 	public Vector3 cposition;
 	public Vector3 result;
 	Vector3 targetpos;
+	//CursorLockMode wantedmode;
 	void Start () {
         //GunManager.instance.Guns[1].SetActive(true);
 		camera = player.GetComponent<Camera>();
@@ -28,8 +30,16 @@ public class position : MonoBehaviour {
 		Distance = shot.point *100.0f;
 		cposition = transform.position;
 		result = targetpos - cposition;
-		if(((Distance.x > 55300 && Distance.x < 55400) && (Distance.y > 38700 && Distance.y < 38800) && (Distance.z > -54 && Distance.z < -51)) && ((result.x < 1 && result.x >-1) && (result.y < 1 && result.y >-1) && (result.z < 1 && result.z >-1))){
-			Debug.Log ("Here");
+		if (((Distance.x > 56877 && Distance.x < 56878) && (Distance.y > 38589 && Distance.y < 38671) && (Distance.z > 235 && Distance.z < 380))) {// && ((result.x < 1 && result.x >-1) && (result.y < 1 && result.y >-1) && (result.z < 1 && result.z >-1))){
+			Cursor.visible = true;//(CursorLockMode.Locked != wantedmode);
+			Cursor.lockState = CursorLockMode.None;
+			//GameManager.instance.paused = true;
+			gameObject.GetComponent<FirstPersonController>().enabled = false;
+			//gameObject.GetComponent<MouseLook> ().enabled;
+		} else {
+			//GameManager.instance.paused = false;
+			gameObject.GetComponent<FirstPersonController>().enabled = true;
 		}
+			
 	}
 }
