@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour {
 	public GameObject GlassesDarkness;
     public GameObject Crosshair;
 	public GameObject HeatWave;
+	public GameObject BoltPuzzle;
+	public bool LeftTrigger;
+	public bool RightTrigger;
+	bool BoltsTriggered;
+	public bool InSight;
 	//public bool paused;
 
 
@@ -137,6 +142,11 @@ public class GameManager : MonoBehaviour {
 			StartCoroutine (GlassesToggle("OFF"));
 			GlassesOn = false;
 		}
+		if (LeftTrigger && RightTrigger && !BoltsTriggered) {
+			BoltPuzzle.GetComponent<Animation> ().Play ("CafeteriaBigGateOpening");
+			BoltsTriggered = true;
+		}
+
         /*if (Input.GetKeyUp(KeyCode.Tab))
         {
             if(Crosshair.activeSelf){

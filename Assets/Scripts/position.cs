@@ -17,6 +17,7 @@ public class position : MonoBehaviour
     Vector3 targetpos;
     bool done;
     bool inside;
+	GameObject bolt;
     //CursorLockMode wantedmode;
     void Start()
     {
@@ -35,7 +36,15 @@ public class position : MonoBehaviour
         Distance = shot.point * 100.0f;
         cposition = transform.position;
         result = targetpos - cposition;
-        if (((Distance.x > 56877 && Distance.x < 56878) && (Distance.y > 38589 && Distance.y < 38679) && (Distance.z > 235 && Distance.z < 380)))
+		if (GameManager.instance.InSight) {
+			if (shot.collider.tag == "Bolts") {
+				if (Input.GetKeyDown (KeyCode.Mouse0)) {
+					bolt = shot.transform.gameObject;
+					bolt.transform.Rotate (45, 0, 0);
+				}
+			}
+		}
+        /*if (((Distance.x > 56877 && Distance.x < 56878) && (Distance.y > 38589 && Distance.y < 38679) && (Distance.z > 235 && Distance.z < 380)))
         {// && ((result.x < 1 && result.x >-1) && (result.y < 1 && result.y >-1) && (result.z < 1 && result.z >-1))){
             if (!done)
             {
@@ -51,15 +60,6 @@ public class position : MonoBehaviour
             {
                 gameObject.GetComponent<FirstPersonController>().enabled = true;
             }
-            /*} else {
-                //GameManager.instance.paused = false;
-                if(inside && done){
-                    gameObject.GetComponent<FirstPersonController>().enabled = true;
-                   // inside = false;
-                }
-                //done = false;
-                //inside = false;
-            }*/
         }
         else
         {
@@ -68,6 +68,6 @@ public class position : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             done = true;
-        }
+        }*/
     }
 }
