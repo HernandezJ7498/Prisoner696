@@ -51,7 +51,13 @@ public class GameManager : MonoBehaviour {
 	public bool RightTrigger;
 	bool BoltsTriggered;
 	public bool InSight;
-	//public bool paused;
+	public bool CubeInSight;
+	public bool LeftBlockTrigger;
+	public bool RightBlockTrigger;
+	public GameObject LastDoor;
+	public bool LastDoorIsOpen;
+	public bool LastTriggerLeft;
+	public bool LastTriggerRight;
 
 
 
@@ -85,8 +91,6 @@ public class GameManager : MonoBehaviour {
         Cursor.visible = true;
 		Glasses.SetActive (false);
 		GlassesDarkness.SetActive (false);
-		//Cursor.lockState = CursorLockMode.None;
-		//Cursor.lockState = CursorLockMode.Confined;
         Cursor.lockState = CursorLockMode.Locked;
 	}
 	void Update () {
@@ -146,16 +150,10 @@ public class GameManager : MonoBehaviour {
 			BoltPuzzle.GetComponent<Animation> ().Play ("CafeteriaBigGateOpening");
 			BoltsTriggered = true;
 		}
-
-        /*if (Input.GetKeyUp(KeyCode.Tab))
-        {
-            if(Crosshair.activeSelf){
-                Crosshair.SetActive(false);
-            }
-            else{
-                Crosshair.SetActive(true);
-            }
-        }*/
+		if (LeftBlockTrigger && RightBlockTrigger && !LastDoorIsOpen) {
+			LastDoor.GetComponent<Animation> ().Play ("OpenLastDoor");
+			LastDoorIsOpen = true;
+		}
 	}
 	void BridgeReset(){
 		IsTimerOn = false;

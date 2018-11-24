@@ -51,10 +51,19 @@ public class position : MonoBehaviour
 				}
 		}
 		if (shot.collider.tag == "Cubes") {
-			//Debug.Log ("Touched it");
-			if (Input.GetKeyDown (KeyCode.Mouse0)) {
-				bolt = shot.transform.gameObject;
-				bolt.transform.Rotate (0, 90, 0);
+			if (GameManager.instance.CubeInSight) {
+				if (Input.GetKeyDown (KeyCode.Mouse0)) {
+					bolt = shot.transform.gameObject;
+					bolt.transform.Rotate (0, 90, 0);
+				}
+			}
+		}
+		if (shot.collider.tag == "LastCubes") {
+			if(GameManager.instance.LastTriggerLeft || GameManager.instance.LastTriggerRight){
+				if (Input.GetKeyDown (KeyCode.Mouse0)) {
+					bolt = shot.transform.gameObject;
+					bolt.transform.position -= new Vector3 (.09f,0,0);
+				}
 			}
 		}
         /*if (((Distance.x > 56877 && Distance.x < 56878) && (Distance.y > 38589 && Distance.y < 38679) && (Distance.z > 235 && Distance.z < 380)))

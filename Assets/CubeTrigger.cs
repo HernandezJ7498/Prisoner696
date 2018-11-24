@@ -18,9 +18,6 @@ public class CubeTrigger : MonoBehaviour {
 			Gate.GetComponent<Animation> ().Play ("CafCubePuzzleOpen");
 			IsOpen = true;
 		}
-		for(int i = 0;i<cubes.Length;i++){
-			Debug.Log (cubes[i]);
-		}
 	}
 	void OnTriggerEnter(Collider other){
 		if (!IsOpen) {

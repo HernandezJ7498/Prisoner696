@@ -17,6 +17,7 @@ TagManager:
   - Bolts
   - Bolt
   - Cubes
+  - LastCubes
   layers:
   - Default
   - TransparentFX
