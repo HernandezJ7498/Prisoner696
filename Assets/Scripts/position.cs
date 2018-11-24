@@ -36,12 +36,25 @@ public class position : MonoBehaviour
         Distance = shot.point * 100.0f;
         cposition = transform.position;
         result = targetpos - cposition;
-		if (GameManager.instance.InSight) {
-			if (shot.collider.tag == "Bolts") {
+		if (shot.collider.tag == "Bolts") {
+			if (GameManager.instance.InSight) {
 				if (Input.GetKeyDown (KeyCode.Mouse0)) {
 					bolt = shot.transform.gameObject;
 					bolt.transform.Rotate (45, 0, 0);
 				}
+			}
+		}
+		if (shot.collider.tag == "Bolt") {
+				if (Input.GetKeyDown (KeyCode.Mouse0)) {
+					bolt = shot.transform.gameObject;
+					bolt.transform.Rotate (0, 0, 45);
+				}
+		}
+		if (shot.collider.tag == "Cubes") {
+			//Debug.Log ("Touched it");
+			if (Input.GetKeyDown (KeyCode.Mouse0)) {
+				bolt = shot.transform.gameObject;
+				bolt.transform.Rotate (0, 90, 0);
 			}
 		}
         /*if (((Distance.x > 56877 && Distance.x < 56878) && (Distance.y > 38589 && Distance.y < 38679) && (Distance.z > 235 && Distance.z < 380)))
