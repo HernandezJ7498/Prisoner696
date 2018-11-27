@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour {
 	public bool LastDoorIsOpen;
 	public bool LastTriggerLeft;
 	public bool LastTriggerRight;
+	public bool ElevatorKeyRoomSwitches;
 
 
 
@@ -95,7 +96,7 @@ public class GameManager : MonoBehaviour {
 	}
 	void Update () {
         if(ActiveSwitches == 3){
-            Destroy(GameObject.Find("TEMPSECRETDOOR"));
+			ElevatorKeyRoomSwitches = true;
         }
 		if(CafDoorIsOpen){
 			Destroy(GameObject.Find("TEMPCAFDOOR"));

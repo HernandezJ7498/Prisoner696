@@ -7,6 +7,7 @@ public class OpenControlRoom : MonoBehaviour {
 
 	// Use this for initialization
     public GameObject SwitchAlert;
+	bool IsOpened;
 	void Start () {
 		
 	}
@@ -16,17 +17,20 @@ public class OpenControlRoom : MonoBehaviour {
 		
 	}
     void OnTriggerStay(){
-        SwitchAlert.GetComponent<Text> ().text = "Use Object To Open Door";
-        if(Input.GetMouseButtonDown(0)){   
-            if(GunManager.instance.Guns[(int)GunManager.Weapons.Crowbar].activeSelf){
-                GameManager.instance.collect(gameObject);
-                SwitchAlert.GetComponent<Text> ().text = "";
-            }
-            else{
-                //SwitchAlert.GetComponent<Text> ().text = "Not Strong Enough";
-            }
-        }
-    }
+		if(!IsOpened){
+			SwitchAlert.GetComponent<Text> ().text = "Use Object To Open Door";
+	        if(Input.GetMouseButtonDown(0)){   
+		            if(GunManager.instance.Guns[(int)GunManager.Weapons.Crowbar].activeSelf){
+						gameObject.GetComponent<Animation> ().Play ("OpenControlRoomDoor");
+						IsOpened = true;
+		                SwitchAlert.GetComponent<Text> ().text = "";
+		            }
+		            else{
+		                //SwitchAlert.GetComponent<Text> ().text = "Not Strong Enough";
+		            }
+	        	}
+	    	}
+	}
     void OnTriggerExit(){
         SwitchAlert.GetComponent<Text> ().text = "";
     }
