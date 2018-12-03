@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
     public int ActiveSwitches;
     public int ActiveButtons;
 	public bool ElevatorPower = false;
-	public bool OpenSniperRoom = false;
+	public bool ComputersOn = false;
 	public bool CafDoorIsOpen = false;
 	public bool PanelActive = false;
 	public int FireGuardHealth = 10;
