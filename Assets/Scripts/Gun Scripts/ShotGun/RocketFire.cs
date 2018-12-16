@@ -15,7 +15,7 @@ public class RocketFire : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0) && Crosshair.GetComponent<targetController>().lockedOn){
 			//AudioSource gunsound = gameObject.GetComponent<AudioSource> ();
 			//gunsound.Play ();
-			gameObject.GetComponent<Animation> ().Play ("Rocket");
+			//gameObject.GetComponent<Animation> ().Play ("Rocket");
 	}
 }
 }

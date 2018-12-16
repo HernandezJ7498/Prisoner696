@@ -8,13 +8,17 @@ public class GunManager : MonoBehaviour {
 	// Use this for initialization
     public static GunManager instance = null;
     public GameObject[] Guns;
+	public GameObject Up;
+	public GameObject Left;
+	public GameObject Right;
+	public GameObject Down;
     void Awake(){
         if(instance == null)
             instance = this;
         else if (instance != null)
             Destroy (gameObject);
     }
-	public enum Weapons {M9, Rocket, M16, ColtPython, Sniper, Crowbar};
+	public enum Weapons {Rocket, Crowbar, Scanner};
 	void Start () {
 		
 	}
@@ -24,6 +28,10 @@ public class GunManager : MonoBehaviour {
 		
 	}
 	public void DisableGuns(){
+		Up.SetActive (false);
+		Down.SetActive (false);
+		Left.SetActive (false);
+		Right.SetActive (false);
 		for (int i = 0; i < Guns.Length; i++) {
 			Guns[i].SetActive(false);
 		}

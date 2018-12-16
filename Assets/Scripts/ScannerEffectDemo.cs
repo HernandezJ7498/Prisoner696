@@ -25,18 +25,22 @@ public class ScannerEffectDemo : MonoBehaviour
 			ScanDistance += Time.deltaTime * 50;
 			foreach (Scannable s in _scannables)
 			{
-				if (Vector3.Distance(ScannerOrigin.position, s.transform.position) <= ScanDistance)
-					s.Ping();
+				if (Vector3.Distance (ScannerOrigin.position, s.transform.position) <= ScanDistance) {
+					s.Ping ();
+				}
+			}
+			if (ScanDistance > 100) {
+				_scanning = false;
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.C))
+		/*if (Input.GetKeyDown(KeyCode.C))
 		{
 			_scanning = true;
 			ScanDistance = 0;
-		}
+		}*/
 
-		if (Input.GetKeyDown(KeyCode.L))
+		if (Input.GetKeyDown(KeyCode.Mouse0) && GunManager.instance.isEnabled(0))
 		{
 			Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
@@ -47,9 +51,10 @@ public class ScannerEffectDemo : MonoBehaviour
 				ScanDistance = 0;
 				ScannerOrigin.position = hit.point;
 			}
-		}
-		if (ScanDistance > 100) {
-			_scanning = false;
+			foreach (Scannable s in _scannables)
+			{
+				Debug.Log (Vector3.Distance (ScannerOrigin.position, s.transform.position));
+			}
 		}
 	}
 	// End Demo Code

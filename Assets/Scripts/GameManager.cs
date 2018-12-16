@@ -28,17 +28,16 @@ public class GameManager : MonoBehaviour {
 	public int KillCount = 0;
 	bool level1 = false;
 	bool level2 = false;
-    public int KeyParts;
-    public bool HasAllKeys = false;
+    public bool HasLastKey = false;
     public int Locks = 2;
     public GameObject Bridge;
-    float timeLeft = 19.0f;
+    float timeLeft = 20.0f;
     public GameObject tdisplay;
     float minutes;
     float seconds;
     string seconds1;
 	public bool IsTimerOn = false;
-	bool BridgeIsActive = false;
+	public bool BridgeIsActive = false;
 	public GameObject LampCam;
 	public bool GlassesOn = false;
 	public bool FoundGlasses = false;
@@ -47,6 +46,7 @@ public class GameManager : MonoBehaviour {
     public GameObject Crosshair;
 	public GameObject HeatWave;
 	public GameObject BoltPuzzle;
+	public GameObject BridgeLight;
 	public bool LeftTrigger;
 	public bool RightTrigger;
 	bool BoltsTriggered;
@@ -59,6 +59,10 @@ public class GameManager : MonoBehaviour {
 	public bool LastTriggerLeft;
 	public bool LastTriggerRight;
 	public bool ElevatorKeyRoomSwitches;
+	public bool CrowbarEnabled;
+	public bool RocketEnabled;
+	public bool ScannerEnabled;
+	public GameObject Dot;
 
 
 
@@ -87,7 +91,6 @@ public class GameManager : MonoBehaviour {
 		SunGuardHealth = 10;
 		UnicornGuardHealth = 3;
 		DarkGuardHealth = 10;
-        KeyParts = 0;
 		LampCam.SetActive (false);
         Cursor.visible = true;
 		Glasses.SetActive (false);
@@ -155,10 +158,29 @@ public class GameManager : MonoBehaviour {
 			LastDoor.GetComponent<Animation> ().Play ("OpenLastDoor");
 			LastDoorIsOpen = true;
 		}
+		if (Input.GetKeyDown ("1")) {
+			Dot.SetActive (true);
+			GunManager.instance.DisableGuns ();
+		}
+		if (Input.GetKeyDown ("2") && RocketEnabled) {
+			Dot.SetActive (false);
+			GunManager.instance.DisableGuns ();
+			GunManager.instance.EnableGun (1);
+		}
+		if (Input.GetKeyDown ("3") && CrowbarEnabled) {
+			Dot.SetActive (true);
+			GunManager.instance.DisableGuns ();
+			GunManager.instance.EnableGun (2);
+		}
+		if (Input.GetKeyDown ("4") && ScannerEnabled) {
+			Dot.SetActive (true);
+			GunManager.instance.DisableGuns ();
+			GunManager.instance.EnableGun (0);
+		}
 	}
 	void BridgeReset(){
 		IsTimerOn = false;
-		timeLeft = 19.0f;
+		timeLeft = 20.0f;
 		for (int i = 0; i < Buttons.Length; i++) {
 			Buttons [i] = false;
 		}
@@ -212,6 +234,7 @@ public class GameManager : MonoBehaviour {
 		yield return new WaitForSeconds (8.5f);
 		LampCam.SetActive (false);
 		HeatWave.SetActive (false);
+		BridgeLight.SetActive (false);
 	}
 	IEnumerator GlassesToggle(string Action){
 		if (Action == "ON") {
