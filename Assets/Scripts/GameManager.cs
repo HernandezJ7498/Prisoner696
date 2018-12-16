@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour {
 	public bool CrowbarEnabled;
 	public bool RocketEnabled;
 	public bool ScannerEnabled;
+	public bool VentBroke;
 	public GameObject Dot;
 
 
