@@ -6,7 +6,7 @@ public class FirstBolt : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject Gate;
-	bool opened;
+	public bool opened;
 	void Start () {
 		
 	}

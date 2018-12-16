@@ -23,7 +23,7 @@ public class Switch : MonoBehaviour {
 		}
 		if (Input.GetKeyDown ("x") && !ON) {
 			GameManager.instance.switchon (switchNumber);
-			StartCoroutine (Switchcount (3));
+			StartCoroutine (Switchcount (4));
 			ON = true;
 		}
     }
@@ -41,7 +41,7 @@ public class Switch : MonoBehaviour {
 	IEnumerator Switchcount (float delay) {
 		ON = true;
 		int Switchoncount = GameManager.instance.ActiveSwitches;
-		SwitchAlert.GetComponent<Text> ().text = "Number of switches on: " +Switchoncount + "/3";
+		SwitchAlert.GetComponent<Text> ().text = "Loudspeaker: *"+Switchoncount + " out of Three switches are on*";
 		yield return new WaitForSeconds (delay);
 		SwitchAlert.GetComponent<Text> ().text ="";
 	}

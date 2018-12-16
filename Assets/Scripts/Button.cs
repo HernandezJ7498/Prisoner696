@@ -39,9 +39,9 @@ public class Button : MonoBehaviour {
 		Triggered = true;
 		int Buttoncount = GameManager.instance.ActiveButtons;
 		if (GameManager.instance.ActiveButtons <= 3) {
-			SwitchAlert.GetComponent<Text> ().text = "Number of buttons triggered: " + Buttoncount + "/3";
+			SwitchAlert.GetComponent<Text> ().text = "Loudspeaker: *" + Buttoncount + " buttons out of three triggered TIMER STARTED!*";
 		} else {
-			SwitchAlert.GetComponent<Text> ().text = "Bridge is active";
+			SwitchAlert.GetComponent<Text> ().text = "Loudspeaker: *Bridge is active*";
 		}
 		yield return new WaitForSeconds (delay);
 		SwitchAlert.GetComponent<Text> ().text ="";

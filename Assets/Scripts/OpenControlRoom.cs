@@ -18,7 +18,7 @@ public class OpenControlRoom : MonoBehaviour {
 	}
     void OnTriggerStay(){
 		if(!IsOpened){
-			SwitchAlert.GetComponent<Text> ().text = "Use Object To Open Door";
+			SwitchAlert.GetComponent<Text> ().text = "James: This door is locked... maybe a tool would help";
 	        if(Input.GetMouseButtonDown(0)){   
 		            if(GunManager.instance.Guns[(int)GunManager.Weapons.Crowbar].activeSelf){
 						gameObject.GetComponent<Animation> ().Play ("OpenControlRoomDoor");

@@ -7,6 +7,7 @@ public class BoltNotice : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject SwitchAlert;
+	public GameObject Gate;
 	void Start () {
 		
 	}
@@ -16,7 +17,9 @@ public class BoltNotice : MonoBehaviour {
 		
 	}
 	void OnTriggerStay(){
-		SwitchAlert.GetComponent<Text> ().text = "Click on the Bolt to turn it";
+		if (!Gate.GetComponent<FirstBolt> ().opened) {
+			SwitchAlert.GetComponent<Text> ().text = "James: This is a weird contraption, maybe i should try turning the big bolt";
+		}
 	}
 	void OnTriggerExit(){
 		SwitchAlert.GetComponent<Text> ().text = "";
