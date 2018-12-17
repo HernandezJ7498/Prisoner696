@@ -7,6 +7,7 @@ public class CrowbarPickup : MonoBehaviour {
 
 	// Use this for initialization
     public GameObject SwitchAlert;
+	public GameObject BuschmannSequence;
 	void Start () {
 
 	}
@@ -20,7 +21,14 @@ public class CrowbarPickup : MonoBehaviour {
         if (Input.GetKeyDown("x")) {
 			GunManager.instance.DisableGuns ();
 			int thegun = (int)GunManager.Weapons.Crowbar;
+			GameManager.instance.CrowbarEnabled = true;
+			GunManager.instance.DisableGuns ();
 			GunManager.instance.EnableGun (thegun);
+			GameManager.instance.BeganBathroomSequence = true;
+			SwitchAlert.GetComponent<Text>().text = "";
+			BuschmannSequence.SetActive (true);
+			GameManager.instance.Dot.SetActive (false);
+			Destroy (gameObject);
 		}
 	}
     void OnTriggerExit(){

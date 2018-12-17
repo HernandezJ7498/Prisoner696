@@ -63,8 +63,12 @@ public class GameManager : MonoBehaviour {
 	public bool RocketEnabled;
 	public bool ScannerEnabled;
 	public bool VentBroke;
+	public bool BeganBathroomSequence;
 	public bool BeganGunSequence;
+	public bool ToiletPaper1Pickup;
+	public bool ToiletPaper2Pickup;
 	public int GunEventSequence;
+	public int BuschmannEventSequence;
 	public GameObject Dot;
 
 
@@ -165,21 +169,22 @@ public class GameManager : MonoBehaviour {
 		if (Input.GetKeyDown ("1")) {
 			Dot.SetActive (true);
 			GunManager.instance.DisableGuns ();
+			Dot.SetActive (true);
 		}
 		if (Input.GetKeyDown ("2") && RocketEnabled) {
 			Dot.SetActive (false);
 			GunManager.instance.DisableGuns ();
-			GunManager.instance.EnableGun (1);
+			GunManager.instance.EnableGun ((int)GunManager.Weapons.Rocket);
 		}
 		if (Input.GetKeyDown ("3") && CrowbarEnabled) {
-			Dot.SetActive (true);
+			Dot.SetActive (false);
 			GunManager.instance.DisableGuns ();
-			GunManager.instance.EnableGun (2);
+			GunManager.instance.EnableGun ((int)GunManager.Weapons.Crowbar);
 		}
 		if (Input.GetKeyDown ("4") && ScannerEnabled) {
 			Dot.SetActive (true);
 			GunManager.instance.DisableGuns ();
-			GunManager.instance.EnableGun (0);
+			GunManager.instance.EnableGun ((int)GunManager.Weapons.Scanner);
 		}
 	}
 	void BridgeReset(){

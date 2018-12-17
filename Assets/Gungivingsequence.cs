@@ -49,6 +49,9 @@ public class Gungivingsequence : MonoBehaviour {
 			"a tool or something to hit the vent maybe the key will be in there. Hurry! before he snaps again!";
 			laststep = true;
 			GameManager.instance.ScannerEnabled = true;
+			GunManager.instance.DisableGuns ();
+			GunManager.instance.EnableGun ((int)GunManager.Weapons.Scanner);
+			GameManager.instance.Dot.SetActive (false);
 			CharacterTalks.GetComponent<Text> ().text = Voice;
 		} else{
 			Voice = "What in tarnation are you still doing here if you found the key? GO! Get the hell out of this hell hole\n" +
