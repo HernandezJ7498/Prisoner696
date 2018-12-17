@@ -63,6 +63,8 @@ public class GameManager : MonoBehaviour {
 	public bool RocketEnabled;
 	public bool ScannerEnabled;
 	public bool VentBroke;
+	public bool BeganGunSequence;
+	public int GunEventSequence;
 	public GameObject Dot;
 
 
@@ -97,6 +99,7 @@ public class GameManager : MonoBehaviour {
 		Glasses.SetActive (false);
 		GlassesDarkness.SetActive (false);
         Cursor.lockState = CursorLockMode.Locked;
+		GunEventSequence = 0;
 	}
 	void Update () {
         if(ActiveSwitches == 3){
