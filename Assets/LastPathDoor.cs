@@ -7,6 +7,7 @@ public class LastPathDoor : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject CharacterTalks;
+	bool isopen;
 	void Start () {
 		
 	}
@@ -19,10 +20,14 @@ public class LastPathDoor : MonoBehaviour {
 		if (!GameManager.instance.HasLastKey) {
 			CharacterTalks.GetComponent<Text> ().text = "James: This door seems really secured, if only i could find the key";
 		} else {
-			gameObject.GetComponent<animation> ().Play ();
+			if (!isopen) {
+				gameObject.GetComponent<Animation> ().Play ("Openlastpath");
+				gameObject.GetComponent<BoxCollider> ().enabled = false;
+				isopen = true;
+			}
 		}
 	}
 	void OnTriggerExit(){
-
+		CharacterTalks.GetComponent<Text> ().text = "";
 	}
 }
