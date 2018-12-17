@@ -40,7 +40,7 @@ public class ScannerEffectDemo : MonoBehaviour
 			ScanDistance = 0;
 		}*/
 
-		if (Input.GetKeyDown(KeyCode.Mouse0) && GunManager.instance.isEnabled(0))
+		if (Input.GetKeyDown(KeyCode.Mouse0) && GunManager.instance.isEnabled((int)GunManager.Weapons.Scanner))
 		{
 			Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;

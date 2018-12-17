@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToiletPaper2Pickup : MonoBehaviour {
 
 	// Use this for initialization
-	bool doonce;
+	public GameObject LoudSpeaker;
 	void Start () {
 		
 	}
@@ -15,7 +16,17 @@ public class ToiletPaper2Pickup : MonoBehaviour {
 		
 	}
 	void OnTriggerStay(){
-
+		LoudSpeaker.GetComponent<Text>().text = "Press X to Pick up toilet paper";
+		if(Input.GetKeyDown(KeyCode.X)){
+			Destroy (gameObject);
+		}
+	}
+	void OnTriggerExit(){
+		LoudSpeaker.GetComponent<Text> ().text = "";
+	}
+	void OnDestroy(){
+		GameManager.instance.BuschmannEventSequence += 1;
+		LoudSpeaker.GetComponent<Text> ().text = "";
 	}
 
 }

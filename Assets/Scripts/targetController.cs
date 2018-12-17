@@ -13,6 +13,8 @@ public class targetController : MonoBehaviour {
     public GameObject CrossLeft;
     public GameObject CrossRight;
     public GameObject CurrentEnemy;
+	public GameObject player;
+	float LockDistance;
     public bool lockedOn;//Keeps Track Of Lock On Status    
  
     //Tracks Which Enemy In List Is Current Target
@@ -38,16 +40,20 @@ public class targetController : MonoBehaviour {
     }  
      
     void Update () { 
-		if (GunManager.instance.isEnabled (1)) {
+		if (GunManager.instance.isEnabled ((int)GunManager.Weapons.Rocket)) {
 			//Press Space Key To Lock On
 			if (Input.GetKeyDown (KeyCode.Tab) && !lockedOn) {
-				if (nearByEnemies.Count >= 1) {
-					lockedOn = true;
-					image.enabled = true;
-	 
-					//Lock On To First Enemy In List By Default
-					lockedEnemy = 0;
-					target = nearByEnemies [lockedEnemy];
+				LockDistance = Vector3.Distance (nearByEnemies [0].transform.position, player.transform.position);
+				Debug.Log (LockDistance);
+				if(LockDistance < 27){	
+					if (nearByEnemies.Count >= 1) {
+						lockedOn = true;
+						image.enabled = true;
+		 
+						//Lock On To First Enemy In List By Default
+						lockedEnemy = 0;
+						target = nearByEnemies [lockedEnemy];
+					}
 				}
 			}
 	        //Turn Off Lock On When Space Is Pressed Or No More Enemies Are In The List

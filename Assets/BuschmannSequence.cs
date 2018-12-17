@@ -12,6 +12,7 @@ public class BuschmannSequence : MonoBehaviour {
 	public GameObject CharacterLongTalks;
 	public GameObject CabinetDoor;
 	bool RespondedYes;
+	bool seen3once;
 	void Start () {
 		
 	}
@@ -51,8 +52,46 @@ public class BuschmannSequence : MonoBehaviour {
 			GameManager.instance.ToiletPaper2Pickup = true;
 			CabinetDoor.GetComponent<BoxCollider> ().enabled = true;
 		}
+		if(GameManager.instance.BuschmannEventSequence == 3){
+			voice = "Buschmann: Ahhhhh... thats what im talking about! Okay so here's the scoop, i don't know if youve seen it\n" +
+				"already but theres a chest in the storage room downstairs. That chest contains a weapons strong enough to\n" +
+				"break anything and open anything. The chest is locked with a special passcode that is needed to access the weapon\n" +
+				"i dont know what the passcode is but i can tell you how to figure it out. I left my X-Ray goggles in one\n" +
+				"of the lockers in the locker room. The goggles will allow you to see through walls... there are 4 numbers scattered\n" +
+				"all over the facility, these numbers are all different colors and the order of the colors im going to give you\n" +
+				"will give you the password. The order is Red, Blue, Pink, Green... The glasses will only work once you're close\n" +
+				"enough to the wall with the number behind it. Now Leave! let me take care of my bussiness";
+			CharacterLongTalks.GetComponent<Text> ().text = voice;
+			GameManager.instance.ToiletPaper2Pickup = true;
+			CabinetDoor.GetComponent<BoxCollider> ().enabled = true;
+
+		}
+		if(GameManager.instance.BuschmannEventSequence == 4){
+			voice = "Buschmann: Tinkle, Tinkle, little pee\n" +
+				"In the potty i will be\n" +
+				"Poopy, Poopy stinky-O\n" +
+				"In the potty i will go\n" +
+				"[Left Click to ask for number color order]\n" +
+				"[Right Click to ask for instructions]";
+			CharacterLongTalks.GetComponent<Text> ().text = voice;
+			if (Input.GetKeyDown (KeyCode.Mouse0)) {
+				GameManager.instance.BuschmannEventSequence += 1;
+			}else if(Input.GetKeyDown(KeyCode.Mouse1)){
+				GameManager.instance.BuschmannEventSequence = 3;
+			}
+		}
+		if(GameManager.instance.BuschmannEventSequence == 5){
+			voice = "It's Red, Blue, Pink, Green you idiot!";
+			CharacterLongTalks.GetComponent<Text> ().text = voice;
+		}
 	}
 	void OnTriggerExit(){
 		CharacterLongTalks.GetComponent<Text> ().text = "";
+		if(GameManager.instance.BuschmannEventSequence == 3){
+			GameManager.instance.BuschmannEventSequence += 1;
+		}
+		if(GameManager.instance.BuschmannEventSequence == 5){
+			GameManager.instance.BuschmannEventSequence -= 1;
+		}
 	}
 }

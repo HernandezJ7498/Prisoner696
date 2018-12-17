@@ -19,6 +19,7 @@ public class ToiletPaper1Pickup : MonoBehaviour {
 		Loudspeaker.GetComponent<Text> ().text = "Press X to pick up toilet paper";
 		if(Input.GetKeyDown(KeyCode.X)){
 			GameManager.instance.ToiletPaper1Pickup = true;
+			Destroy (gameObject);
 		}
 	}
 	void OnTriggerExit(){
@@ -26,5 +27,6 @@ public class ToiletPaper1Pickup : MonoBehaviour {
 	}
 	void OnDestroy(){
 		GameManager.instance.BuschmannEventSequence += 1;
+		Loudspeaker.GetComponent<Text> ().text = "";
 	}
 }
