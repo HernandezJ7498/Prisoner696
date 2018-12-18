@@ -3,7 +3,7 @@
     Properties
     {
         _Grid ("Grid", range(1, 50.)) = 30.
-        _SpeedMax ("Speed Max", range(0, 30.)) = 20.
+        _SpeedMax ("Speed Max", range(0, 100.)) = 50.
         _SpeedMin ("Speed Min", range(0, 10.)) = 2.
         _Density ("Density", range(0, 30.)) = 5.
     }
@@ -55,7 +55,7 @@
  
                     float digit = 0.0;
                    
-                    if (n < 1. ) { digit = 9712.; }
+                    if (n < 1. ) { digit = 21454.0; }
                     else if (n < 2. ) { digit = 21158.0; }
                     else if (n < 3. ) { digit = 25231.0; }
                     else if (n < 4. ) { digit = 23187.0; }

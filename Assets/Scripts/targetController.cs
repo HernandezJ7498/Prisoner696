@@ -37,22 +37,24 @@ public class targetController : MonoBehaviour {
         lockedOn = false;
         lockedEnemy = 0;
         image.enabled = false;
+		LockDistance = 30.0f;
     }  
      
     void Update () { 
 		if (GunManager.instance.isEnabled ((int)GunManager.Weapons.Rocket)) {
 			//Press Space Key To Lock On
 			if (Input.GetKeyDown (KeyCode.Tab) && !lockedOn) {
-				LockDistance = Vector3.Distance (nearByEnemies [0].transform.position, player.transform.position);
-				Debug.Log (LockDistance);
-				if(LockDistance < 27){	
-					if (nearByEnemies.Count >= 1) {
-						lockedOn = true;
-						image.enabled = true;
-		 
-						//Lock On To First Enemy In List By Default
-						lockedEnemy = 0;
-						target = nearByEnemies [lockedEnemy];
+				if(nearByEnemies.Count > 0){	
+					LockDistance = Vector3.Distance (nearByEnemies [0].transform.position, player.transform.position);
+					if(LockDistance < 27){	
+						if (nearByEnemies.Count >= 1) {
+							lockedOn = true;
+							image.enabled = true;
+			 
+							//Lock On To First Enemy In List By Default
+							lockedEnemy = 0;
+							target = nearByEnemies [lockedEnemy];
+						}
 					}
 				}
 			}

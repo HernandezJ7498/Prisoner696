@@ -120,17 +120,6 @@ public class GameManager : MonoBehaviour {
 			LampCam.GetComponent<Animation> ().Play ("ShowBridge");
 			StartCoroutine (DisableBridgeCamera());
         }
-		if(KillCount > 3 && !level1){
-			UnicornGuardHealth = 6;
-			level1 = true;
-		}
-		if(KillCount > 10 && !level2){
-			UnicornGuardHealth = 9;
-			level2 = true;
-		}
-        if(Locks == 0){
-            Destroy(GameObject.Find("TEMPBACKDOOR"));
-        }
 		if(IsTimerOn && !BridgeIsActive){
 			timeLeft -= Time.deltaTime;
 	        minutes = Mathf.Floor(timeLeft / 60);

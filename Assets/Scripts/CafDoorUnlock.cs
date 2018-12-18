@@ -7,6 +7,7 @@ public class CafDoorUnlock : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject SwitchAlert;
+	public GameObject Door;
 	void Start () {
 
 	}
@@ -15,10 +16,11 @@ public class CafDoorUnlock : MonoBehaviour {
 	void Update () {
 	}
 	void OnTriggerStay(){
-		if (GameManager.instance.CafDoorIsOpen == false) {
+		if (!GameManager.instance.CafDoorIsOpen) {
 				SwitchAlert.GetComponent<Text> ().text = "Press X to open Cafeteria Storage Door";
 			if (Input.GetKeyDown ("x")) {
 				GameManager.instance.CafDoorIsOpen = true;
+				Door.GetComponent<Animation> ().Play ("SecretCafOpening");
 			}
 		} 
 	}

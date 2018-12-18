@@ -23,7 +23,8 @@ public class LockHealth : MonoBehaviour
   
             if (Health < 1)
             {
-                Destroy(gameObject);
+				GameManager.instance.Locks -= 1;
+				Destroy(gameObject);
             }
         //transform.LookAt(ThePlayer.transform);
         /*if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out shot))
