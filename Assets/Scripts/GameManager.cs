@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
     public bool HasLastKey = false;
     public int Locks = 2;
     public GameObject Bridge;
-    float timeLeft = 20.0f;
+    float timeLeft = 30.0f;
 	float EndGameTimer = 9.0f;
     public GameObject tdisplay;
 	public GameObject GameTimeDisplay;
