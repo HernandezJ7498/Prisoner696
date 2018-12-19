@@ -63,15 +63,15 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Grid: 5.5
+    - _Grid: 9.7
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpeedMax: 0.09
-    - _SpeedMin: 0.0001
+    - _SpeedMax: 0.5
+    - _SpeedMin: 0.06
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
