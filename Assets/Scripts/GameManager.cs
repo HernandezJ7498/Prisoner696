@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour {
 	public bool CrowbarEnabled;
 	public bool RocketEnabled;
 	public bool ScannerEnabled;
+	public bool WoodEnabled;
+	public bool IsSwinggingWood;
 	public bool VentBroke;
 	public bool BeganBathroomSequence;
 	public bool BeganGunSequence;
@@ -69,7 +71,13 @@ public class GameManager : MonoBehaviour {
 	public bool ToiletPaper2Pickup;
 	public int GunEventSequence;
 	public int BuschmannEventSequence;
+	public GameObject CellBlockKeyHud;
+	public GameObject ElevatorKeyHud;
+	public GameObject LastKeyHud;
 	public GameObject Dot;
+	public GameObject ScannerPanel;
+	public GameObject ToiletPaperPicture;
+	public Vector3 GameManagerPointOfImpact;
 
 
 
@@ -157,23 +165,53 @@ public class GameManager : MonoBehaviour {
 		}
 		if (Input.GetKeyDown ("1")) {
 			Dot.SetActive (true);
+			ScannerPanel.SetActive (false);
 			GunManager.instance.DisableGuns ();
 			Dot.SetActive (true);
 		}
 		if (Input.GetKeyDown ("2") && RocketEnabled) {
 			Dot.SetActive (false);
+			ScannerPanel.SetActive (false);
 			GunManager.instance.DisableGuns ();
 			GunManager.instance.EnableGun ((int)GunManager.Weapons.Rocket);
 		}
 		if (Input.GetKeyDown ("3") && CrowbarEnabled) {
 			Dot.SetActive (false);
+			ScannerPanel.SetActive (false);
 			GunManager.instance.DisableGuns ();
 			GunManager.instance.EnableGun ((int)GunManager.Weapons.Crowbar);
 		}
 		if (Input.GetKeyDown ("4") && ScannerEnabled) {
+			ScannerPanel.SetActive (true);
 			Dot.SetActive (true);
 			GunManager.instance.DisableGuns ();
 			GunManager.instance.EnableGun ((int)GunManager.Weapons.Scanner);
+		}
+		if (Input.GetKeyDown ("5") && WoodEnabled) {
+			Dot.SetActive (true);
+			ScannerPanel.SetActive (false);
+			GunManager.instance.DisableGuns ();
+			GunManager.instance.EnableGun ((int)GunManager.Weapons.Wood);
+		}
+		if (ToiletPaper1Pickup || ToiletPaper2Pickup) {
+			ToiletPaperPicture.SetActive (true);
+		} else {
+			ToiletPaperPicture.SetActive (false);
+		}
+		if (HasSecretKey) {
+			CellBlockKeyHud.SetActive (true);
+		} else {
+			CellBlockKeyHud.SetActive (false);
+		}
+		if (HasElevatorKey) {
+			ElevatorKeyHud.SetActive (true);
+		} else {
+			ElevatorKeyHud.SetActive (false);
+		}
+		if (HasLastKey) {
+			LastKeyHud.SetActive (true);
+		} else {
+			LastKeyHud.SetActive (false);
 		}
 	}
 	void BridgeReset(){

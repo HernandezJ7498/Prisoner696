@@ -17,7 +17,7 @@ public class OpenCabinet : MonoBehaviour {
 		
 	}
 	void OnTriggerStay(){
-		if (GameManager.instance.ToiletPaper2Pickup) {
+		if (GameManager.instance.BuschmannEventSequence == 2) {
 			Loudspeaker.GetComponent<Text>().text = "Press X to open cabinet";
 			if (Input.GetKeyDown (KeyCode.X)) {
 				gameObject.GetComponent<Animation> ().Play ("OpenCabinetAnimation");

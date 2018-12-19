@@ -18,7 +18,7 @@ public class GunManager : MonoBehaviour {
         else if (instance != null)
             Destroy (gameObject);
     }
-	public enum Weapons {Rocket, Crowbar, Scanner};
+	public enum Weapons {Rocket, Crowbar, Scanner, Wood};
 	void Start () {
 		
 	}

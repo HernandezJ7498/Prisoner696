@@ -16,7 +16,7 @@ public class VentCollapse : MonoBehaviour {
 		
 	}
 	public void OnTriggerStay(){
-		if (Input.GetKeyDown (KeyCode.Mouse0) && GunManager.instance.isEnabled (2) && !GameManager.instance.VentBroke) {
+		if (Input.GetKeyDown (KeyCode.Mouse0) && GunManager.instance.isEnabled ((int)GunManager.Weapons.Crowbar) && !GameManager.instance.VentBroke) {
 			Vent.GetComponent<Animation> ().Play ("VentFall");
 			GameManager.instance.VentBroke = true;
 			Key.SetActive (true);

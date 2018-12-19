@@ -9,6 +9,7 @@ public class GameManagerMenu : MonoBehaviour {
 	public GameObject Prisoner;
 	public GameObject SixNine;
 	public GameObject Six;
+	public GameObject buttontext;
 	void Start () {
 		Prisoner.GetComponent<Animation> ().Play ("PrisonerAnimate");
 		SixNine.GetComponent<Animation> ().Play ("69Animate");
@@ -20,6 +21,6 @@ public class GameManagerMenu : MonoBehaviour {
 		
 	}
 	public void LoadGame(){
-		SceneManager.LoadScene ("MainScene");
+		SceneManager.LoadScene ("PreGameCredits");
 	}
 }

@@ -23,7 +23,7 @@ public class Switch : MonoBehaviour {
 		}
 		if (Input.GetKeyDown ("x") && !ON) {
 			GameManager.instance.switchon (switchNumber);
-			StartCoroutine (Switchcount (4));
+			StartCoroutine (Switchcount (10));
 			ON = true;
 		}
     }
@@ -41,7 +41,17 @@ public class Switch : MonoBehaviour {
 	IEnumerator Switchcount (float delay) {
 		ON = true;
 		int Switchoncount = GameManager.instance.ActiveSwitches;
-		SwitchAlert.GetComponent<Text> ().text = "Loudspeaker: *"+Switchoncount + " out of Three switches are on*";
+		if (Switchoncount == 1) {
+			SwitchAlert.GetComponent<Text> ().text = "Loudspeaker: *ELEVATOR KEY ACCESS SEQUENCE STARTED*\n" +
+				"" + (3 - GameManager.instance.ActiveSwitches) + " SWITCHES REMAINING";
+		} else if (Switchoncount == 2) {
+			SwitchAlert.GetComponent<Text> ().text = "Loudspeaker: *ELEVATOR KEY ACCESS SEQUENCE*\n" +
+				"" + (3 - GameManager.instance.ActiveSwitches) + " SWITCH REMAINING*";
+		}
+		else if (Switchoncount == 3) {
+			SwitchAlert.GetComponent<Text> ().text = "Loudspeaker: *ELEVATOR KEY ACCESS SEQUENCE COMPLETED*\n" +
+				" NO SWITCHES REMAINING (ACCESS GRANTED) *OPENING DOOR*";
+		}
 		yield return new WaitForSeconds (delay);
 		SwitchAlert.GetComponent<Text> ().text ="";
 	}

@@ -41,18 +41,18 @@ public class BuschmannSequence : MonoBehaviour {
 				"I dont need you to help me get out of here...I'm actually quite comfy down here. all i need is\n" +
 				"some some toilet paper look around and see if you find any.";
 			CharacterLongTalks.GetComponent<Text> ().text = voice;
-			GameManager.instance.ToiletPaper1Pickup = true;
 			ToiletPaper1.GetComponent<BoxCollider>().enabled = true;
 		}
 		if(GameManager.instance.BuschmannEventSequence == 2){
+			GameManager.instance.ToiletPaper1Pickup = false;
 			voice = "Buschmann: EWWWWW! What is your problem?? Charmin?? What am i a caveman? get this garbage away from me\n" +
 				"i won't tell you anything until you get me some quality toilet paper. shameful... look around the front\n " +
 				"in the control room or one of the offices there has to be something else.";
 			CharacterLongTalks.GetComponent<Text> ().text = voice;
-			GameManager.instance.ToiletPaper2Pickup = true;
 			CabinetDoor.GetComponent<BoxCollider> ().enabled = true;
 		}
 		if(GameManager.instance.BuschmannEventSequence == 3){
+			GameManager.instance.ToiletPaper2Pickup = false;
 			voice = "Buschmann: Ahhhhh... thats what im talking about! Okay so here's the scoop, i don't know if youve seen it\n" +
 				"already but theres a chest in the storage room downstairs. That chest contains a weapons strong enough to\n" +
 				"break anything and open anything. The chest is locked with a special passcode that is needed to access the weapon\n" +
@@ -62,7 +62,6 @@ public class BuschmannSequence : MonoBehaviour {
 				"will give you the password. The order is Red, Blue, Pink, Green... The glasses will only work once you're close\n" +
 				"enough to the wall with the number behind it. Now Leave! let me take care of my bussiness";
 			CharacterLongTalks.GetComponent<Text> ().text = voice;
-			GameManager.instance.ToiletPaper2Pickup = true;
 			CabinetDoor.GetComponent<BoxCollider> ().enabled = true;
 
 		}

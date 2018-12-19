@@ -32,6 +32,7 @@ public class position : MonoBehaviour
         //Debug.Log(transform.position);
         ray = camera.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out shot);
+		GameManager.instance.GameManagerPointOfImpact = shot.point;
         Debug.DrawLine(transform.position, shot.point, Color.cyan);
         Distance = shot.point * 100.0f;
         cposition = transform.position;

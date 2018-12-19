@@ -14,8 +14,10 @@ public class SpawnKey : MonoBehaviour {
 	void Update () {
 		
 	}
-    void OnTriggerEnter(Collider other){
-         GameManager.instance.HasSecretKey = true;
-        GameManager.instance.collect(gameObject);
+    void OnTriggerStay(Collider other){
+		if(GameManager.instance.IsSwinggingWood){	
+			GameManager.instance.HasSecretKey = true;
+        	GameManager.instance.collect(gameObject);
+		}
     }
 }

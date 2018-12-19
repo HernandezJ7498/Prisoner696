@@ -7,6 +7,7 @@ public class LastPathDoor : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject CharacterTalks;
+	public GameObject thebox;
 	bool isopen;
 	void Start () {
 		
@@ -22,12 +23,18 @@ public class LastPathDoor : MonoBehaviour {
 		} else {
 			if (!isopen) {
 				gameObject.GetComponent<Animation> ().Play ("Openlastpath");
-				gameObject.GetComponent<BoxCollider> ().enabled = false;
 				isopen = true;
+				StartCoroutine (waittoopen());
 			}
 		}
 	}
 	void OnTriggerExit(){
 		CharacterTalks.GetComponent<Text> ().text = "";
+	}
+	IEnumerator waittoopen(){
+		yield return new WaitForSeconds (7);
+		GameManager.instance.HasLastKey = false;
+		thebox.SetActive (false);
+		gameObject.GetComponent<BoxCollider> ().enabled = false;
 	}
 }

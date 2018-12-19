@@ -21,7 +21,7 @@ public class OpenSpawnGate : MonoBehaviour {
 		if(GameManager.instance.HasSecretKey && !IsOpen){
 			gameObject.GetComponent<Animation> ().Play ("OpenSpawnGate");
 			StartCoroutine (waitforanim());
-			//gameObject.GetComponent<MeshCollider> ().enabled = false;
+			GameManager.instance.HasSecretKey = false;
 			IsOpen = true;
         }
         else{

@@ -18,6 +18,7 @@ public class ToiletPaper2Pickup : MonoBehaviour {
 	void OnTriggerStay(){
 		LoudSpeaker.GetComponent<Text>().text = "Press X to Pick up toilet paper";
 		if(Input.GetKeyDown(KeyCode.X)){
+			GameManager.instance.ToiletPaper2Pickup = true;
 			Destroy (gameObject);
 		}
 	}
