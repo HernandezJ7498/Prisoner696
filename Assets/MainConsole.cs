@@ -11,6 +11,7 @@ public class MainConsole : MonoBehaviour {
 	public GameObject MainLights;
 	public GameObject Blinds;
 	public GameObject LoudSpeaker;
+	public GameObject CharacterTalks;
 	void Start () {
 		
 	}
@@ -27,11 +28,19 @@ public class MainConsole : MonoBehaviour {
 				SpotLights.SetActive (false);
 				Blinds.GetComponent<Animation> ().Play ("OpenBlinds");
 				itson = true;
+				CharacterTalks.GetComponent<Text> ().text = "Voice: HELLO? ANYONE THERE? WHO TURNED THOSE LIGHTS ON? HELLOOO??";
+				StartCoroutine (emptytalk ());
 			}
+		} else {
+			LoudSpeaker.GetComponent<Text> ().text = "";
 		}
 
 	}
 	void OnTriggerExit(){
 		LoudSpeaker.GetComponent<Text> ().text = "";
+	}
+	IEnumerator emptytalk(){
+		yield return new WaitForSeconds (10);
+		CharacterTalks.GetComponent<Text>().text = "";
 	}
 }

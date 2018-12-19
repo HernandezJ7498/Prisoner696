@@ -75,7 +75,7 @@ public class FireGuardFollow : MonoBehaviour {
 		PainSound = Random.Range (1, 4);
 		yield return new WaitForSeconds (0.9f);
 		//ScreenFlash.SetActive (true);
-		GlobalHealth.PlayerHealth -= 1;
+		//GlobalHealth.PlayerHealth -= 1;
 		if (PainSound == 1) {
 			Hurt01.Play ();
 		} else if (PainSound == 2) {

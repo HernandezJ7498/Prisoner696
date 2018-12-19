@@ -25,14 +25,15 @@ public class GameManager : MonoBehaviour {
 	public int SunGuardHealth = 10;
 	public int UnicornGuardHealth = 3;
 	public int DarkGuardHealth = 10;
-	public int KillCount = 0;
 	bool level1 = false;
 	bool level2 = false;
     public bool HasLastKey = false;
     public int Locks = 2;
     public GameObject Bridge;
     float timeLeft = 20.0f;
+	float EndGameTimer = 9.0f;
     public GameObject tdisplay;
+	public GameObject GameTimeDisplay;
     float minutes;
     float seconds;
     string seconds1;
@@ -69,14 +70,20 @@ public class GameManager : MonoBehaviour {
 	public bool BeganGunSequence;
 	public bool ToiletPaper1Pickup;
 	public bool ToiletPaper2Pickup;
+	public bool EndGame;
 	public int GunEventSequence;
 	public int BuschmannEventSequence;
+	float GameMinutes;
+	float GameSeconds;
+	float LastGameMinutes;
+	float LastGameSeconds;
 	public GameObject CellBlockKeyHud;
 	public GameObject ElevatorKeyHud;
 	public GameObject LastKeyHud;
 	public GameObject Dot;
 	public GameObject ScannerPanel;
 	public GameObject ToiletPaperPicture;
+	public GameObject EndGameCountdown;
 	public Vector3 GameManagerPointOfImpact;
 
 
@@ -112,8 +119,42 @@ public class GameManager : MonoBehaviour {
 		GlassesDarkness.SetActive (false);
         Cursor.lockState = CursorLockMode.Locked;
 		GunEventSequence = 0;
+		GameMinutes = 0;
+		GameSeconds = 0;
 	}
 	void Update () {
+		if (!EndGame) {
+			GameMinutes = Mathf.Floor ((Time.time) / 60);
+			GameSeconds = Mathf.RoundToInt ((Time.time) % 60);
+			if (GameSeconds < 10) {
+				if (GameMinutes < 10) {
+					GameTimeDisplay.GetComponent<Text> ().text = "0" + GameMinutes.ToString () + ":0" + GameSeconds.ToString ();
+				} else {
+					GameTimeDisplay.GetComponent<Text> ().text = GameMinutes.ToString () + ":0" + GameSeconds.ToString ();
+				}
+			} else {
+				if (GameMinutes < 10) {
+					GameTimeDisplay.GetComponent<Text> ().text = "0" + GameMinutes.ToString () + ":" + GameSeconds.ToString ();
+				} else {
+					GameTimeDisplay.GetComponent<Text> ().text = GameMinutes.ToString () + ":" + GameSeconds.ToString ();
+				}
+			}
+		} else {
+			EndGameCountdown.SetActive (true);
+			EndGameTimer -= Time.deltaTime;
+			LastGameMinutes = Mathf.Floor(EndGameTimer / 60);
+			LastGameSeconds = Mathf.RoundToInt(EndGameTimer % 60);
+			//LastGameSeconds1 = seconds.ToString();
+			if (LastGameSeconds < 10)
+			{
+				LastGameSeconds =  Mathf.RoundToInt(LastGameSeconds);
+			}
+			EndGameCountdown.GetComponent<Text>().text = LastGameMinutes.ToString() + "0:0" + LastGameSeconds.ToString();
+			if(LastGameSeconds < 1){
+				EndGameCountdown.SetActive (false);
+			}
+		}
+
         if(ActiveSwitches == 3){
 			ElevatorKeyRoomSwitches = true;
         }
