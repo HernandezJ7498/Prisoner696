@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour {
 	public bool ToiletPaper1Pickup;
 	public bool ToiletPaper2Pickup;
 	public bool EndGame;
+	public bool HelpEnabled;
 	public int GunEventSequence;
 	public int BuschmannEventSequence;
 	float GameMinutes;
@@ -84,6 +85,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject ScannerPanel;
 	public GameObject ToiletPaperPicture;
 	public GameObject EndGameCountdown;
+	public GameObject HelpMenu;
 	public Vector3 GameManagerPointOfImpact;
 
 
@@ -233,6 +235,15 @@ public class GameManager : MonoBehaviour {
 			ScannerPanel.SetActive (false);
 			GunManager.instance.DisableGuns ();
 			GunManager.instance.EnableGun ((int)GunManager.Weapons.Wood);
+		}
+		if (Input.GetKeyDown (KeyCode.H)) {
+			if (!HelpEnabled) {
+				HelpMenu.SetActive (true);
+				HelpEnabled = true;
+			}else {
+				HelpMenu.SetActive (false);
+				HelpEnabled = false;
+			}
 		}
 		if (ToiletPaper1Pickup || ToiletPaper2Pickup) {
 			ToiletPaperPicture.SetActive (true);

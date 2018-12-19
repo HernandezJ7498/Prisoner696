@@ -7,6 +7,7 @@ public class PickUpRocket : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject LoudSpeaker;
+	public GameObject MenuOption;
 	void Start () {
 		
 	}
@@ -21,6 +22,7 @@ public class PickUpRocket : MonoBehaviour {
 			GameManager.instance.RocketEnabled = true;
 			GunManager.instance.DisableGuns ();
 			int thegun = (int)GunManager.Weapons.Rocket;
+			MenuOption.SetActive (true);
 			GunManager.instance.EnableGun (thegun);
 		}
     }

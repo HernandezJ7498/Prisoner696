@@ -7,6 +7,7 @@ public class woodpickup : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject LoudSpeaker;
+	public GameObject MenuOption;
 	void Start () {
 		
 	}
@@ -22,6 +23,7 @@ public class woodpickup : MonoBehaviour {
 				GunManager.instance.DisableGuns ();
 				GunManager.instance.EnableGun ((int)GunManager.Weapons.Wood);
 				GameManager.instance.WoodEnabled = true;
+				MenuOption.SetActive (true);
 				LoudSpeaker.GetComponent<Text> ().text = "";
 				Destroy (gameObject);	
 		}

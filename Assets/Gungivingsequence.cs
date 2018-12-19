@@ -11,6 +11,7 @@ public class Gungivingsequence : MonoBehaviour {
 	bool gunready;
 	public GameObject Gun;
 	public GameObject Battery;
+	public GameObject MenuOption;
 	bool laststep;
 	void Start () {
 		gunready = false;
@@ -49,6 +50,7 @@ public class Gungivingsequence : MonoBehaviour {
 			"a tool or something to hit the vent maybe the key will be in there. Hurry! before he snaps again!";
 			laststep = true;
 			GameManager.instance.ScannerEnabled = true;
+			MenuOption.SetActive (true);
 			GunManager.instance.DisableGuns ();
 			GunManager.instance.EnableGun ((int)GunManager.Weapons.Scanner);
 			GameManager.instance.Dot.SetActive (false);
