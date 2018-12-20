@@ -12,6 +12,7 @@ public class Gungivingsequence : MonoBehaviour {
 	public GameObject Gun;
 	public GameObject Battery;
 	public GameObject MenuOption;
+	public GameObject Panel;
 	bool laststep;
 	void Start () {
 		gunready = false;
@@ -28,7 +29,7 @@ public class Gungivingsequence : MonoBehaviour {
 		}
 		if (GameManager.instance.GunEventSequence == 0) {
 			Voice = "Zack: Who's there?? Hey you! i can't believe there's someone else.\n " +
-			"My name is Zachary Lee Tate the Third, i woke up in a room full of cells adn started wandering around.\n" +
+			"My name is Zachary Lee Tate the Third, i woke up in a room full of cells and started wandering around.\n" +
 			"At first i thought it was my buddy Mike Haring playing a prank on me, i hate that guy...but i soon came to realize\n" +
 			"that maybe im just part of the half that didn't vanish after the snap... get it? Avengers?\n" +
 			"okay... tough crowd. Maybe you can help me.. go to the control room upstairs, there should be a bottom drawer\n" +
@@ -41,7 +42,7 @@ public class Gungivingsequence : MonoBehaviour {
 			" mentioned the possibility of a spare being somewhere in the vent system, i don't know what happened to Buschmann\n" +
 			"and i don't trust him but at this point i dont have a choice. I designed this gun to scan for the master key\n" +
 			"to that door but with some tweeks i can have it scan for any keys that would open that door. The only thing\n" +
-			" i need is a battery, try looking for it around control or where the large battery packs are upstairs";
+			" i need is a battery, try looking for it around the control room or where the large battery packs are upstairs";
 			CharacterTalks.GetComponent<Text> ().text = Voice;
 		} else if (GameManager.instance.GunEventSequence == 2) {
 			Voice = "You are a gift from the Gods! This should be ready to go. Take the gun and press the trigger\n" +
@@ -51,6 +52,7 @@ public class Gungivingsequence : MonoBehaviour {
 			laststep = true;
 			GameManager.instance.ScannerEnabled = true;
 			MenuOption.SetActive (true);
+			Panel.SetActive (true);
 			GunManager.instance.DisableGuns ();
 			GunManager.instance.EnableGun ((int)GunManager.Weapons.Scanner);
 			GameManager.instance.Dot.SetActive (false);

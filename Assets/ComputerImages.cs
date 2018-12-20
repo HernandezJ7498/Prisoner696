@@ -15,9 +15,11 @@ public class ComputerImages : MonoBehaviour {
 	public Sprite Boredatworkmeme;
 	public Sprite FarmSimulator;
 	public bool ImageEnabled;
+	public int maxcount;
 	float randomnum;
 	void Start () {
 		WebsiteImage.GetComponent<Image> ().sprite = Wikipedia;
+		maxcount = 0;
 	}
 	
 	// Update is called once per frame
@@ -33,20 +35,22 @@ public class ComputerImages : MonoBehaviour {
 			Refresh.GetComponent<Text>().text = "Left click to refresh page";	
 		}
 		if(Input.GetKeyDown(KeyCode.Mouse0) && ImageEnabled){
-			randomnum = Random.Range(0.0f,1.0f);
-			Debug.Log (randomnum);
-			if(randomnum >0.0f && randomnum <0.25f){
-				WebsiteImage.GetComponent<Image> ().sprite = Wikipedia;
-			}else if(randomnum >0.25f && randomnum <0.50f){
-				WebsiteImage.GetComponent<Image> ().sprite = ElonImage;
-			}
-			else if(randomnum >0.50f && randomnum <0.70f){
-				WebsiteImage.GetComponent<Image> ().sprite = Boredatworkmeme;
-			}
-			else if(randomnum >0.70f && randomnum <0.95){
-				WebsiteImage.GetComponent<Image> ().sprite = FarmSimulator;
-			}
-			else{
+			if (maxcount < 12) {
+				randomnum = Random.Range (0.0f, 1.0f);
+				Debug.Log (randomnum);
+				if (randomnum > 0.0f && randomnum < 0.25f) {
+					WebsiteImage.GetComponent<Image> ().sprite = Wikipedia;
+				} else if (randomnum > 0.25f && randomnum < 0.50f) {
+					WebsiteImage.GetComponent<Image> ().sprite = ElonImage;
+				} else if (randomnum > 0.50f && randomnum < 0.70f) {
+					WebsiteImage.GetComponent<Image> ().sprite = Boredatworkmeme;
+				} else if (randomnum > 0.70f && randomnum < 0.95) {
+					WebsiteImage.GetComponent<Image> ().sprite = FarmSimulator;
+				} else {
+					WebsiteImage.GetComponent<Image> ().sprite = Puzzlesolve;
+				}
+				maxcount++;
+			} else {
 				WebsiteImage.GetComponent<Image> ().sprite = Puzzlesolve;
 			}
 

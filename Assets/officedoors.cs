@@ -19,7 +19,7 @@ public class officedoors : MonoBehaviour {
 	}
 	void OnTriggerStay(){
 		if(!isopen){
-			Loudspeaker.GetComponent<Text> ().text = "Press X to close door";
+			Loudspeaker.GetComponent<Text> ().text = "Press X to open door";
 			if(Input.GetKeyDown(KeyCode.X)){
 				gameObject.GetComponent<Animation> ().Play ("Office"+mynum+"dooropen");
 				isopen = true;

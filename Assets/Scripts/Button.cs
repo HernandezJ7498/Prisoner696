@@ -9,6 +9,7 @@ public class Button : MonoBehaviour {
 	public int ButtonNumber;
 	public GameObject SwitchAlert;
 	public bool Triggered;
+	bool worked;
     void Start () {
 		
 	}
@@ -19,9 +20,14 @@ public class Button : MonoBehaviour {
 	}
     void OnTriggerStay(){
 		if (Input.GetKeyDown ("x")) {
-			GameManager.instance.buttontrigger (ButtonNumber);
-			StartCoroutine (ButtonCount (3));
-			Triggered = true;
+			worked = GameManager.instance.buttontrigger (ButtonNumber);
+			if (worked) {	
+				StartCoroutine (ButtonCount (3));
+				Triggered = true;
+			} else {
+				SwitchAlert.GetComponent<Text> ().text = "LoudSpeaker: *Incorrect order Alarm Sequence Halted*";
+			}
+			//Triggered = true;
 		}
     }
 	void OnTriggerEnter(){
@@ -38,8 +44,10 @@ public class Button : MonoBehaviour {
 	IEnumerator ButtonCount (float delay) {
 		Triggered = true;
 		int Buttoncount = GameManager.instance.ActiveButtons;
-		if (GameManager.instance.ActiveButtons <= 3) {
+		if (GameManager.instance.ActiveButtons == 1) {
 			SwitchAlert.GetComponent<Text> ().text = "Loudspeaker: *" + Buttoncount + " buttons out of three triggered TIMER STARTED!*";
+		} else if (GameManager.instance.ActiveButtons == 2) {
+			SwitchAlert.GetComponent<Text> ().text = "Loudspeaker: *" + Buttoncount + " buttons out of three triggered*";
 		} else {
 			SwitchAlert.GetComponent<Text> ().text = "Loudspeaker: *Bridge is active*";
 		}

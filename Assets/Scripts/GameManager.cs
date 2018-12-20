@@ -268,7 +268,7 @@ public class GameManager : MonoBehaviour {
 	}
 	void BridgeReset(){
 		IsTimerOn = false;
-		timeLeft = 20.0f;
+		timeLeft = 30.0f;
 		for (int i = 0; i < Buttons.Length; i++) {
 			Buttons [i] = false;
 		}
@@ -288,7 +288,7 @@ public class GameManager : MonoBehaviour {
         Switches[whichswitch] = true;
         ActiveSwitches+= 1;
     }
-    public void buttontrigger(int whichbutton){
+    public bool buttontrigger(int whichbutton){
 		if (Buttons [whichbutton] != true) {
 			IsTimerOn = true;
 			Lamps[whichbutton].GetComponent<Light>().color = LampColor[whichbutton];
@@ -302,6 +302,7 @@ public class GameManager : MonoBehaviour {
 					tdisplay.GetComponent<Text> ().text = "";
 					LampCam.SetActive (false);
 					IsTimerOn = false;
+					return false;
 				}
 			}else if (whichbutton == 1) {
 				if (!Buttons [0] || !Buttons[2]) {
@@ -310,9 +311,11 @@ public class GameManager : MonoBehaviour {
 					tdisplay.GetComponent<Text> ().text = "";
 					LampCam.SetActive (false);
 					IsTimerOn = false;
+					return false;
 				}
 			}
 		}
+		return true;
     }
     public void ActivateBridge(){
         Bridge.GetComponent<Animation>().Play("CreateBridge");

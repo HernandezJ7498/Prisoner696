@@ -29,7 +29,7 @@ public class position : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(transform.position);
+        Debug.Log(transform.position);
         ray = camera.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out shot);
 		GameManager.instance.GameManagerPointOfImpact = shot.point;
