@@ -9,6 +9,7 @@ public class FinishGame : MonoBehaviour {
 	public GameObject ToBeContinued;
 	void Start () {
 		ToBeContinued.GetComponent<Animation> ().Play ("ToBeContinued");
+		StartCoroutine (endgame());
 	}
 	
 	// Update is called once per frame
