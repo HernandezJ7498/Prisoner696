@@ -19,15 +19,17 @@ public class Locker : MonoBehaviour {
 		
 	}
 	void OnTriggerStay(){
-		if (!IsOpen) {
-			SwitchAlert.GetComponent<Text> ().text = "Press X to Open Locker Door";
-			if (Input.GetKeyDown (KeyCode.X)) {
-				IsOpen = true;
-				LockerDoor.GetComponent<Animation> ().Play ("OpenLocker");
-				Glasses.GetComponent<BoxCollider> ().enabled = true; 
+		if(GameManager.instance.BeganBathroomSequence){	
+			if (!IsOpen) {
+				SwitchAlert.GetComponent<Text> ().text = "Press X to Open Locker Door";
+				if (Input.GetKeyDown (KeyCode.X)) {
+					IsOpen = true;
+					LockerDoor.GetComponent<Animation> ().Play ("OpenLocker");
+					Glasses.GetComponent<BoxCollider> ().enabled = true; 
+				}
+			} else {
+				SwitchAlert.GetComponent<Text>().text = "";
 			}
-		} else {
-			SwitchAlert.GetComponent<Text>().text = "";
 		}
 	}
 	void OnTriggerExit(){

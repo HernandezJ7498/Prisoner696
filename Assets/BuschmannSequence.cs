@@ -60,7 +60,7 @@ public class BuschmannSequence : MonoBehaviour {
 				"of the lockers in the locker room. The glasses will allow you to see through walls... there are 4 numbers scattered\n" +
 				"all over the facility, these numbers are all different colors and the order of the colors im going to give you\n" +
 				"will give you the password. The order is Red, Blue, Pink, Green... The glasses will only work once you're close\n" +
-				"enough to the wall with the number behind it. Now Leave! let me take care of my bussiness";
+				"enough to the wall with the number behind it. Now Leave! let me take care of my business";
 			CharacterLongTalks.GetComponent<Text> ().text = voice;
 			CabinetDoor.GetComponent<BoxCollider> ().enabled = true;
 
