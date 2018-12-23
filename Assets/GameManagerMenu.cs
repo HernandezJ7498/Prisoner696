@@ -13,7 +13,7 @@ public class GameManagerMenu : MonoBehaviour {
 	public GameObject buttontext;
 	public GameObject ThePanel;
 	public Sprite[] images = new Sprite[5]; 
-	int randomnum;
+	public int randomnum;
 	void Start () {
 		Prisoner.GetComponent<Animation> ().Play ("PrisonerAnimate");
 		SixNine.GetComponent<Animation> ().Play ("69Animate");

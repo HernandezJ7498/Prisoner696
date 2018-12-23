@@ -31,5 +31,8 @@ public class PickUpGlasses : MonoBehaviour {
 	}
 	void OnTriggerExit(){
 		SwitchAlert.GetComponent<Text>().text = "";
+		if(PickedUp){
+			Destroy (gameObject);
+		}
 	}
 }

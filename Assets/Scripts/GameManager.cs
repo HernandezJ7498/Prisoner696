@@ -86,7 +86,9 @@ public class GameManager : MonoBehaviour {
 	public GameObject ToiletPaperPicture;
 	public GameObject EndGameCountdown;
 	public GameObject HelpMenu;
+	public GameObject BridgeWall;
 	public Vector3 GameManagerPointOfImpact;
+	public bool alreadydead;
 
 
 
@@ -123,6 +125,7 @@ public class GameManager : MonoBehaviour {
 		GunEventSequence = 0;
 		GameMinutes = 0;
 		GameSeconds = 0;
+		alreadydead = false;
 	}
 	void Update () {
 		if (!EndGame) {
@@ -169,6 +172,7 @@ public class GameManager : MonoBehaviour {
 			BridgeIsActive = true;
 			tdisplay.GetComponent<Text> ().text = "";
 			LampCam.GetComponent<Animation> ().Play ("ShowBridge");
+			BridgeWall.SetActive (false);
 			StartCoroutine (DisableBridgeCamera());
         }
 		if(IsTimerOn && !BridgeIsActive){
