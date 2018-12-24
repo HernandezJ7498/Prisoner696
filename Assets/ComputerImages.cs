@@ -9,6 +9,7 @@ public class ComputerImages : MonoBehaviour {
 	public GameObject WebsiteImage;
 	public GameObject Refresh;
 	public GameObject LoudSpeaker;
+	public GameObject Panel;
 	public Sprite Wikipedia;
 	public Sprite ElonImage;
 	public Sprite Puzzlesolve;
@@ -29,13 +30,16 @@ public class ComputerImages : MonoBehaviour {
 	void OnTriggerStay(){
 		GunManager.instance.DisableGuns ();
 		LoudSpeaker.GetComponent<Text>().text = "Press X to access laptop";	
-		if(Input.GetKeyDown(KeyCode.X)){	
+		if(Input.GetKeyDown(KeyCode.X)){
+			if (GunManager.instance.isEnabled ((int)GunManager.Weapons.Scanner)) {
+				Panel.SetActive (false);
+			}
 			ImageEnabled = true;
 			WebsiteImage.SetActive (true);
 			Refresh.GetComponent<Text>().text = "Left click to refresh page";	
 		}
 		if(Input.GetKeyDown(KeyCode.Mouse0) && ImageEnabled){
-			if (maxcount < 12) {
+			if (maxcount < 15 || GameManager.instance.CafDoorIsOpen) {
 				randomnum = Random.Range (0.0f, 1.0f);
 				Debug.Log (randomnum);
 				if (randomnum > 0.0f && randomnum < 0.25f) {
